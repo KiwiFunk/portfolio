@@ -47,15 +47,16 @@ body {
 
 h1, h2, h3 {
     font-family: 'Gotham', sans-serif;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.2px;
     color: #252525;
 }
 
 /* Main */
 
 /* Page Heading */
-.page-heading {
+#page-heading {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,13 +66,13 @@ h1, h2, h3 {
     text-align: center;
 }
 
-.page-heading>p {
+#page-heading>p {
     padding: 0 10.5vw;
     display: none;
     max-width: 700px;
 }
 
-.page-heading h1 {
+#page-heading .gradient-heading {
     padding: 0 20px;
     font-weight: 900;
     font-size: clamp(5em, 24vw, 8em);   /* Min, Preferred, Max. */
@@ -84,6 +85,11 @@ h1, h2, h3 {
     /* Adding animation to the gradient */
     animation: animate-gradient 14s linear infinite;
     text-shadow: rgba(255,255,255,0.25) 0px 8px 8px;
+}
+
+#page-heading h3 {
+    font-weight: 300;
+    font-size: 1.4em;
 }
 
 /* Social Buttons */
@@ -138,12 +144,12 @@ a {
 @media screen and (min-width: 576px) {
 
     /* Landing Page h1 */
-    .page-heading h1 {
+    #page-heading .gradient-heading {
         padding: 0 8px;
         font-size: clamp(5em, 14vw, 8em);   /* Min, Preferred, Max. */
     }
 
-    .page-heading h1.hover-gradient-git {
+    #page-heading .gradient-heading.hover-gradient-git {
         background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
         background-size: 200%;
         background-clip: text;
@@ -151,7 +157,7 @@ a {
         -webkit-text-fill-color: transparent;
     }
 
-    .page-heading h1.hover-gradient-linkedin {
+    #page-heading .gradient-heading.hover-gradient-linkedin {
         background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
         background-size: 200%;
         background-clip: text;
@@ -159,7 +165,7 @@ a {
         -webkit-text-fill-color: transparent;
     }
     
-    .page-heading h1.hover-gradient-artstation {
+    #page-heading .gradient-heading.hover-gradient-artstation {
         background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
         background-size: 200%;
         background-clip: text;
@@ -167,7 +173,7 @@ a {
         -webkit-text-fill-color: transparent;
     }
 
-    .page-heading>p {
+    #page-heading > p {
         display: block;
     }
 
