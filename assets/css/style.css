@@ -42,8 +42,8 @@ body {
     flex-direction: column; 
     justify-content: center;
     align-items: center;
-    font-family: 'Lato', sans-serif; 
-    background-color: #0A66C2; }
+    font-family: 'Verdana', sans-serif; 
+    background-color: #eeeeee; }
 
 h1, h2, h3 {
     font-family: 'Gotham', sans-serif;
@@ -53,6 +53,38 @@ h1, h2, h3 {
 }
 
 /* Main */
+
+/* Page Heading */
+.page-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.page-heading>p {
+    padding: 0 10.5vw;
+    display: none;
+    max-width: 700px;
+}
+
+.page-heading h1 {
+    padding: 0 20px;
+    font-weight: 900;
+    font-size: clamp(5em, 24vw, 8em);   /* Min, Preferred, Max. */
+    background: linear-gradient(to right, #EC2F5A, #CA864D, #ABCF1B, #CA864D, #EC2F5A);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Adding animation to the gradient */
+    animation: animate-gradient 14s linear infinite;
+    text-shadow: rgba(255,255,255,0.25) 0px 8px 8px;
+}
 
 /* Social Buttons */
 
@@ -102,10 +134,44 @@ a {
     to { background-position: 200% }
 }
 
-/* Media Queries */
-
 /* Media Query: Large or Landscape phones (>576px) */
 @media screen and (min-width: 576px) {
+
+    /* Landing Page h1 */
+    .page-heading h1 {
+        padding: 0 8px;
+        font-size: clamp(5em, 14vw, 8em);   /* Min, Preferred, Max. */
+    }
+
+    .page-heading h1.hover-gradient-git {
+        background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
+        background-size: 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .page-heading h1.hover-gradient-linkedin {
+        background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
+        background-size: 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .page-heading h1.hover-gradient-artstation {
+        background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
+        background-size: 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .page-heading>p {
+        display: block;
+    }
+
+    /* Social Media Buttons */
     .linkbutton {
         background-color: white;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
@@ -160,6 +226,9 @@ a {
 
 /* Media Query: Laptops and Larger (1200px) */
 @media screen and (min-width: 1200px) {
+    /*Page Heading */
+    
+    /* Social Buttons */
     .linkbutton {
         max-width: 10em;
     }
