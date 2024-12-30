@@ -82,9 +82,22 @@ h1, h2, h3 {
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* Adding animation to the gradient */
     animation: animate-gradient 14s linear infinite;
     text-shadow: rgba(255,255,255,0.25) 0px 8px 8px;
+}
+
+#page-heading h2 span {
+    display: inline-block;
+    text-transform: none;
+    font-size: 1.6em;
+    letter-spacing: 2px;
+    font-family: monospace;
+    border-right: 2px solid;
+
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s /* steps(9) */, cursor .4s step-end infinite alternate;
 }
 
 #page-heading h3 {
@@ -140,6 +153,14 @@ a {
     to { background-position: 200% }
 }
 
+@keyframes typing {
+    from { width: 0; }
+}
+
+@keyframes cursor {
+    50% { border-color: transparent }
+}
+
 /* Media Query: Large or Landscape phones (>576px) */
 @media screen and (min-width: 576px) {
 
@@ -175,6 +196,17 @@ a {
 
     #page-heading > p {
         display: block;
+    }
+
+    /* h2 span */
+
+    #page-heading h2 span {
+        display: inline-block;
+        text-transform: none;
+        font-size: clamp(1.8em, 4vw, 2.3em); 
+        letter-spacing: 5px;
+        font-family: monospace;
+        border-right: 3px solid;
     }
 
     /* Social Media Buttons */
