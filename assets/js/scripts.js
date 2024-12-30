@@ -10,4 +10,11 @@ document.querySelectorAll('.linkbutton').forEach(item => {
     });
 });
 
-
+// Framework for setting length of percentage bars in HTML
+document.addEventListener('DOMContentLoaded', function() {
+    const bars = document.querySelectorAll('.percentage-bar');
+    bars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        bar.style.setProperty('--width', width + '%');
+    });
+})
