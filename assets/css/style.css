@@ -1,0 +1,123 @@
+/* Main */
+
+
+/* Social Buttons */
+
+#social-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1rem;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    gap: 3.8vw;
+    height: 12vh;
+}
+
+.linkbutton {
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    width: 90%;        
+    padding: 10px 30px;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-radius: 18px;
+    transition: max-width 0.3s ease-out;
+}
+
+.linkbutton svg {
+    margin-right: 20px;
+    width: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Footer */
+
+/* Animation */
+
+@keyframes animate-gradient {
+    to { background-position: 200% }
+}
+
+/* Media Queries */
+
+/* Media Query: Large or Landscape phones (>576px) */
+@media screen and (min-width: 576px) {
+    .linkbutton {
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+        aspect-ratio: 1 / 1;    /* This keeps the aspect ratio 1:1 */
+        padding: 1px;
+        text-align: center;
+        flex: 1 1 5em;          /* Flex-grow, flex-shrink, flex-basis */
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        max-width: 8em;         /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
+        min-width: 4em;
+        border-radius: 24%;
+        transition: max-width 0.3s ease-out;
+    }
+
+    .linkbutton span {
+        display: none;
+    }
+
+    #git.linkbutton:hover {
+        background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
+        background-size: 800%;
+        fill: white;
+        animation: animate-gradient 9s linear infinite;
+        max-width: 8.4em;
+    }
+    #linkedin.linkbutton:hover {
+        background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
+        background-size: 800%;
+        fill: white;
+        animation: animate-gradient 9s linear infinite;
+        max-width: 8.4em;
+    }
+    #artstation.linkbutton:hover {
+        background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
+        background-size: 800%;
+        fill: white;
+        animation: animate-gradient 9s linear infinite;
+        max-width: 8.4em;
+    }
+
+    .linkbutton svg {
+        margin-right: 0;
+        width: 55%;
+    }
+
+    .linkbutton:hover svg {
+        fill: white;
+    }
+}
+
+/* Media Query: Laptops and Larger (1200px) */
+@media screen and (min-width: 1200px) {
+    .linkbutton {
+        max-width: 10em;
+    }
+
+    #git.linkbutton:hover {
+        max-width: 10.4em;
+    }
+
+    #linkedin.linkbutton:hover {
+        max-width: 10.4em;
+    }
+
+    #artstation.linkbutton:hover {
+        max-width: 10.4em;
+    }
+
+}
