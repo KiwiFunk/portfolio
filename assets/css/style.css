@@ -161,29 +161,6 @@ a {
     letter-spacing: 0;
 }
 
-/* Skills */
-#skills {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
-    padding: 0 4vw;
-    height: 3000px;
-}
-#skills span {
-    margin: 5px 10px;
-    padding: 6px 25px;
-    background-color: #099faa;
-    border-radius: 5px;
-    font-size: 1.6em;
-    color: #ffffff;
-    font-family: Gotham;
-    font-weight: 600;
-    flex-shrink: 1;
-}
-
 /* Footer */
 
 
