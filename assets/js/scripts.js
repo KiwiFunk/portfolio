@@ -9,3 +9,5 @@ document.querySelectorAll('.linkbutton').forEach(item => {
         heading.classList.remove('hover-gradient-git', 'hover-gradient-linkedin', 'hover-gradient-artstation');
     });
 });
+
+

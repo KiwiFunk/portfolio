@@ -53,7 +53,23 @@ h1, h2, h3 {
     color: #252525;
 }
 
+hr {
+    margin: 60px 0;
+}
+
 /* Main */
+
+#landing-page {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 500;
+}
 
 /* Page Heading */
 #page-heading {
@@ -145,12 +161,37 @@ a {
     letter-spacing: 0;
 }
 
+/* Skills */
+#skills {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0 4vw;
+    height: 3000px;
+}
+#skills span {
+    margin: 5px 10px;
+    padding: 6px 25px;
+    background-color: #099faa;
+    border-radius: 5px;
+    font-size: 1.6em;
+    color: #ffffff;
+    font-family: Gotham;
+    font-weight: 600;
+    flex-shrink: 1;
+}
+
 /* Footer */
+
 
 /* Animation */
 
 @keyframes animate-gradient {
-    to { background-position: 200% }
+    to { background-position: 200%; }
+    
 }
 
 @keyframes typing {
@@ -201,11 +242,8 @@ a {
     /* h2 span */
 
     #page-heading h2 span {
-        display: inline-block;
-        text-transform: none;
         font-size: clamp(1.8em, 4vw, 2.3em); 
         letter-spacing: 5px;
-        font-family: monospace;
         border-right: 3px solid;
     }
 
