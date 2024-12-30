@@ -140,7 +140,7 @@ a {
         animation: animate-gradient 9s linear infinite;
         max-width: 8.4em;
     }
-    #artstation.linkbutton:hover {
+    #artstation:hover {
         background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
         background-size: 800%;
         fill: white;
