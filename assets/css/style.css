@@ -53,6 +53,13 @@ h1, h2, h3 {
     color: #252525;
 }
 
+h1 {
+    padding-bottom: 20px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+
 hr {
     margin: 60px 0;
 }
@@ -74,10 +81,6 @@ section {
     background-color: #eeeeee;
     box-shadow: 0 100px 28px #eeeeee;
     z-index: 5;
-}
-
-h1 {
-    font-weight: 500;
 }
 
 /* Page Heading */
@@ -172,14 +175,8 @@ a {
 
 /* Skills Section */
 #skills {
-    padding: 40px;
     margin-top: -10vh;
     z-index: 2;
-}
-
-#skills h1 {
-    margin-bottom: 2rem;
-    font-size: 1.7em;
 }
 
 #skills-container {
@@ -189,6 +186,7 @@ a {
     align-items: baseline;
     gap: 4rem;
     margin-top: 2rem;
+    padding: 20px 40px;
 }
 
 #skills-container .skill {
@@ -233,10 +231,12 @@ li{
 
 #hero-image img {
     width: 100%;
-    max-width: calc(100vw - 40px); /* Subtract padding from both sides */
+    max-width: calc(100vw - 40px);
     height: auto;
-    margin-bottom: 20px; /* Ensure gap below the hero image */
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease-in-out; /* Add transition for smooth fade-in effect */
 }
+
 
 #thumbnails {
     display: flex;
@@ -250,9 +250,17 @@ li{
 
 #thumbnails img {
     width: auto;
-    max-width: calc(33.33% - 13.33px); /* Ensure consistent gap between thumbnails */
+    max-width: calc(33.33% - 13.33px);
     flex: 1;
     object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Add transition */
+}
+
+#thumbnails img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    cursor: pointer;
+   
 }
 
 #projects img {
