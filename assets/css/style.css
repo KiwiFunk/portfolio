@@ -57,6 +57,10 @@ hr {
     margin: 60px 0;
 }
 
+section {
+    max-width: 1200px;
+}
+
 /* Main */
 
 #landing-page {
@@ -130,7 +134,7 @@ h1 {
 #social-buttons {
     display: flex;
     flex-flow: row wrap;
-    padding: 1rem;
+    padding: 2rem;
     justify-content: center;
     align-items: center;
     gap: 3.8vw;
@@ -214,8 +218,49 @@ li{
 
 /* Projects Section */
 #projects {
-    padding: 40px;
+    padding-top: 2rem;;
 }
+
+#photos {
+    display: flex;
+    flex-direction: column; /* Stack hero image and thumbnails vertically */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px; /* Add padding to prevent images from touching the viewport edges */
+    box-sizing: border-box; /* Ensure padding is included in the total width */
+}
+
+#hero-image img {
+    width: 100%;
+    max-width: calc(100vw - 40px); /* Subtract padding from both sides */
+    height: auto;
+    margin-bottom: 20px; /* Ensure gap below the hero image */
+}
+
+#thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width of parent container */
+    gap: 20px; /* Add uniform spacing between thumbnails */
+    flex-wrap: wrap; /* Allow thumbnails to wrap if necessary */
+    box-sizing: border-box; /* Ensure gap is included in the total width */
+}
+
+#thumbnails img {
+    width: auto;
+    max-width: calc(33.33% - 13.33px); /* Ensure consistent gap between thumbnails */
+    flex: 1;
+    object-fit: contain;
+}
+
+#projects img {
+    border-radius: 10px;
+}
+
+
+
 /* Footer */
 
 
