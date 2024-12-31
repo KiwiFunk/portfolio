@@ -234,7 +234,7 @@ li{
     max-width: calc(100vw - 40px);
     height: auto;
     margin-bottom: 20px;
-    transition: opacity 0.3s ease-in-out; /* Add transition for smooth fade-in effect */
+    transition: opacity 0.2s ease-in-out; /* Add transition for smooth fade-in effect */
 }
 
 
@@ -250,7 +250,7 @@ li{
 
 #thumbnails img {
     width: auto;
-    max-width: calc(33.33% - 13.33px);
+    max-width: calc(25% - 15px); /*total gap width is (3 * 20), 100 - 60 gives us 40, with 60 remaining. 60/4 is 15.
     flex: 1;
     object-fit: contain;
     border-radius: 10px;

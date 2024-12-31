@@ -32,7 +32,9 @@ window.addEventListener('scroll', function() {
     landingPage.style.boxShadow = `0 100px 28px rgba(238, 238, 238, ${opacity})`;
 });
 
-/* OLD
+
+//Change image thumbnails depending on what is clicked
+
 document.addEventListener("DOMContentLoaded", function () {
     const thumbnails = document.querySelectorAll('#thumbnails img');
     const heroImage = document.querySelector('#hero-image img');
@@ -43,68 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const newAlt = thumbnail.getAttribute('alt');
             heroImage.setAttribute('src', newSrc);
             heroImage.setAttribute('alt', newAlt);
-        });
-    });
-});
-*/
-
-/*
-document.addEventListener("DOMContentLoaded", function () {
-    const thumbnails = document.querySelectorAll('#thumbnails img');
-    const heroImage = document.querySelector('#hero-image img');
-
-    // Store the original hero image attributes
-    let originalSrc = heroImage.getAttribute('src');
-    let originalAlt = heroImage.getAttribute('alt');
-
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function () {
-            const newSrc = thumbnail.getAttribute('src');
-            const newAlt = thumbnail.getAttribute('alt');
-
-            // Swap the hero image with the clicked thumbnail image
-            thumbnail.setAttribute('src', originalSrc);
-            thumbnail.setAttribute('alt', originalAlt);
-
-            // Update the hero image to the new source
-            heroImage.setAttribute('src', newSrc);
-            heroImage.setAttribute('alt', newAlt);
-
-            // Update the originalSrc and originalAlt with new values
-            originalSrc = newSrc;
-            originalAlt = newAlt;
-        });
-    });
-});
-*/
-
-document.addEventListener("DOMContentLoaded", function() {
-    const thumbnails = document.querySelectorAll('#thumbnails img');
-    const heroImage = document.querySelector('#hero-image img');
-
-    let originalSrc = heroImage.getAttribute('src');
-    let originalAlt = heroImage.getAttribute('alt');
-
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-            const newSrc = thumbnail.getAttribute('src');
-            const newAlt = thumbnail.getAttribute('alt');
-
-            // Swap the images
-            thumbnail.setAttribute('src', originalSrc);
-            thumbnail.setAttribute('alt', originalAlt);
 
             // Fade out the hero image before changing it
-            heroImage.style.opacity = 0;
+            heroImage.style.opacity = 0.5;
             setTimeout(() => {
                 heroImage.setAttribute('src', newSrc);
                 heroImage.setAttribute('alt', newAlt);
                 heroImage.style.opacity = 1;
-            }, 300);
-
-            // Update the originalSrc and originalAlt with new values
-            originalSrc = newSrc;
-            originalAlt = newAlt;
+            }, 200);
         });
     });
 });
