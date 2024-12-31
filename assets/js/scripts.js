@@ -18,3 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
         bar.style.setProperty('--width', width + '%');
     });
 })
+
+window.addEventListener('scroll', function() {
+    const landingPage = document.getElementById('landing-page');
+    const scrollPosition = window.scrollY;
+    const maxScroll = 400; // Adjust this value as needed
+
+    // Calculate opacity based on scroll position
+    const opacity = Math.max(0, 1 - scrollPosition / maxScroll);
+
+    // Apply the opacity to the background color and box-shadow
+    landingPage.style.backgroundColor = `rgba(238, 238, 238, ${opacity})`;
+    landingPage.style.boxShadow = `0 100px 28px rgba(238, 238, 238, ${opacity})`;
+});
