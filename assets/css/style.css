@@ -157,6 +157,13 @@ section {
     transition: max-width 0.3s ease-out;
 }
 
+.linkbutton span {
+    font-family: 'Gotham', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
 .linkbutton svg {
     margin-right: 20px;
     width: 45px;
@@ -174,10 +181,7 @@ a {
 }
 
 /* Skills Section */
-#skills {
-    margin-top: -10vh;
-    z-index: 2;
-}
+
 
 #skills-container {
     display: flex;
@@ -214,89 +218,18 @@ li{
     background-size: 400%;
 }
 
-/* Projects Section */
-#projects {
-    padding-top: 2rem;
-    background-color: #FF442D;
-}
-
-.button {
-    padding:20px;
-    background-color: rgba(0, 0, 0, 0.212);
-    border-radius: 20%;
-    z-index: 6;
-    position: absolute;
-    margin: 0 36px;
-    top: 50%;
-    font-size: 25px;
-    font-weight: 600;
-    color: #ffffff;
-    font-family: 'Gotham', sans-serif;
-}
-
-#button-left {
-    left: 0;
-
-}
-
-#button-right {
-    right: 0;
-}
-
-#photos {
-    display: flex;
-    flex-direction: column; /* Stack hero image and thumbnails vertically */
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 20px; /* Add padding to prevent images from touching the viewport edges */
-    box-sizing: border-box; /* Ensure padding is included in the total width */
-}
-
-#hero-image {
-    position: relative;
-}
-
-#hero-image img {
-    width: 100%;
-    max-width: calc(100vw - 40px);
-    height: auto;
-    margin-bottom: 20px;
-    transition: opacity 0.2s ease-in-out; /* Add transition for smooth fade-in effect */
-}
-
-
-#thumbnails {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Full width of parent container */
-    gap: 20px; /* Add uniform spacing between thumbnails */
-    flex-wrap: wrap; /* Allow thumbnails to wrap if necessary */
-    box-sizing: border-box; /* Ensure gap is included in the total width */
-}
-
-#thumbnails img {
-    width: auto;
-    max-width: calc(25% - 15px); /*total gap width is (3 * 20), 100 - 60 gives us 40, with 60 remaining. 60/4 is 15. */
-}
-
-#thumbnails img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    cursor: pointer;
-   
-}
-
-#projects img {
-    border-radius: 10px;
-}
-
 /* Folio Gallery */
+#projects {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -10vh;
+    z-index: 2;
+}
 
 #folio-gallery {
     width: 100%;
     height: 100vh;
-    background-color: rgb(60, 19, 126);
     display: flex;
     flex-flow: column nowrap; /* Default to single column for mobile */
     justify-content: center;
@@ -316,7 +249,7 @@ li{
 }
 
 .project-box.expanded {
-    height: 80vh; /* Expanded height for mobile */
+    height: 90%; /* Expanded height for mobile */
 }
 
 .project-box.shrink {
@@ -399,7 +332,9 @@ li{
 
 
 /* Footer */
-
+footer {
+    height: 100px;
+}
 
 /* Animation */
 
@@ -522,9 +457,9 @@ li{
         fill: white;
     }
 
-    /* Skills */
+    /* Folio Gallery */
 
-    #skills {
+    #projects {
         margin-top: -12vh;
     }
 }
@@ -560,21 +495,23 @@ li{
     }
 
     #folio-gallery {
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
+        margin-top: -6vh;
     }
 
     .project-box {
-        width: 30%; /* Three columns for laptops and desktops */
-        height: 80vh; /* Adjust height for larger screens */
-        transition: width 0.5s ease, opacity 0.5s ease;
+        width: 30%;
+        height: 80vh; 
+        transition: 0.5s ease, opacity 0.5s ease;
     }
-
+    
     .project-box.expanded {
-        width: 90%;
+        width: 100%; /* Expanded height for mobile */
     }
-
+    
     .project-box.shrink {
-        width: 0; /* Shrink width for tablets */
+        width: 0%; /* Shrink height for mobile */
         opacity: 0; /* Fade out effect */
     }
+    
 }

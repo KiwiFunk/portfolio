@@ -33,57 +33,36 @@ window.addEventListener('scroll', function() {
 });
 
 
-//Change image thumbnails depending on what is clicked
-
-document.addEventListener("DOMContentLoaded", function () {
-    const thumbnails = document.querySelectorAll('#thumbnails img');
-    const heroImage = document.querySelector('#hero-image img');
-
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function () {
-            const newSrc = thumbnail.getAttribute('src');
-            const newAlt = thumbnail.getAttribute('alt');
-            heroImage.setAttribute('src', newSrc);
-            heroImage.setAttribute('alt', newAlt);
-
-            // Fade out the hero image before changing it
-            heroImage.style.opacity = 0.5;
-            setTimeout(() => {
-                heroImage.setAttribute('src', newSrc);
-                heroImage.setAttribute('alt', newAlt);
-                heroImage.style.opacity = 1;
-            }, 200);
-        });
-    });
-});
+//Folio Gallery
 
 document.querySelectorAll('.project-box').forEach(box => {
     box.addEventListener('click', function () {
         const isExpanded = this.classList.contains('expanded');
+
+        // Reset all boxes and headers
         document.querySelectorAll('.project-box').forEach(b => {
             b.classList.remove('expanded', 'shrink');
             const header = b.querySelector('.project-header');
-            header.style.opacity = '1'; // Reset header opacity
-            header.style.visibility = 'visible'; // Reset header visibility
-            header.classList.remove('hidden'); // Reset header display
+            header.style.opacity = '1';
+            header.style.visibility = 'visible';
+            header.classList.remove('hidden');
         });
 
-        const headers = document.querySelectorAll('.project-header');
-        headers.forEach(header => {
-            header.style.opacity = '0'; // Hide header immediately
+        // Hide headers immediately
+        document.querySelectorAll('.project-header').forEach(header => {
+            header.style.opacity = '0';
         });
 
         setTimeout(() => {
-            headers.forEach(header => {
-                header.classList.add('hidden'); // Hide header completely after transition
+            // Hide headers completely after transition
+            document.querySelectorAll('.project-header').forEach(header => {
+                header.classList.add('hidden');
             });
 
             if (!isExpanded) {
                 this.classList.add('expanded');
                 document.querySelectorAll('.project-box').forEach(b => {
-                    if (!b.classList.contains('expanded')) {
-                        b.classList.add('shrink');
-                    }
+                    if (!b.classList.contains('expanded')) b.classList.add('shrink');
                 });
             } else {
                 this.style.backgroundImage = this.getAttribute('data-main-image');
@@ -94,10 +73,10 @@ document.querySelectorAll('.project-box').forEach(box => {
             setTimeout(() => {
                 document.querySelectorAll('.project-box').forEach(b => {
                     const header = b.querySelector('.project-header');
-                    header.classList.remove('hidden'); // Remove hidden class first
+                    header.classList.remove('hidden');
                     setTimeout(() => {
-                        header.style.opacity = '1'; // Reset header opacity after delay
-                        header.style.visibility = 'visible'; // Reset header visibility after delay
+                        header.style.opacity = '1';
+                        header.style.visibility = 'visible';
                     }, 10); // Short delay to trigger the transition
                 });
             }, 300); // Delay to match the total transition duration
@@ -107,10 +86,10 @@ document.querySelectorAll('.project-box').forEach(box => {
 
 document.querySelectorAll('.thumbnails img').forEach(thumb => {
     thumb.addEventListener('click', function (event) {
-        event.stopPropagation(); // Prevent triggering the container's click event
+        event.stopPropagation();
         const mainContainer = this.closest('.project-box');
-        const mainImage = this.getAttribute('src');
-        mainContainer.style.backgroundImage = `url(${mainImage})`;
+        mainContainer.style.backgroundImage = `url(${this.getAttribute('src')})`;
     });
 });
+
 
