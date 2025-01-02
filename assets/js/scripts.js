@@ -57,3 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.querySelectorAll('.project-box').forEach(box => {
+    box.addEventListener('click', function () {
+        const isExpanded = this.classList.contains('expanded');
+        document.querySelectorAll('.project-box').forEach(b => {
+            b.classList.remove('expanded', 'shrink');
+        });
+
+        if (!isExpanded) {
+            this.classList.add('expanded');
+            document.querySelectorAll('.project-box').forEach(b => {
+                if (!b.classList.contains('expanded')) {
+                    b.classList.add('shrink');
+                }
+            });
+        }
+    });
+});
