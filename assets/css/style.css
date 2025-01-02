@@ -298,28 +298,29 @@ li{
     height: 100vh;
     background-color: rgb(60, 19, 126);
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap; /* Default to single column for mobile */
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
 .project-box {
-    width: 30%;
-    height: 80vh;
+    width: 90%; /* Default to single column width for mobile */
+    height: 30vh; /* Default to smaller height for mobile */
     border-radius: 20px;
     background-color: rgb(202, 212, 54);
     position: relative;
     overflow: hidden; /* Hide overflow for fading effect */
-    transition: all 0.5s ease; /* Smooth transition */
+    transition: height 0.5s ease, opacity 0.5s ease; /* Transition height for mobile */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .project-box.expanded {
-    width: 90%;
+    height: 80vh; /* Expanded height for mobile */
 }
 
 .project-box.shrink {
-    width: 0;
+    height: 0; /* Shrink height for mobile */
     opacity: 0; /* Fade out effect */
 }
 
@@ -558,4 +559,22 @@ li{
         width: 45%;
     }
 
+    #folio-gallery {
+        flex-flow: row wrap;
+    }
+
+    .project-box {
+        width: 30%; /* Three columns for laptops and desktops */
+        height: 80vh; /* Adjust height for larger screens */
+        transition: width 0.5s ease, opacity 0.5s ease;
+    }
+
+    .project-box.expanded {
+        width: 90%;
+    }
+
+    .project-box.shrink {
+        width: 0; /* Shrink width for tablets */
+        opacity: 0; /* Fade out effect */
+    }
 }
