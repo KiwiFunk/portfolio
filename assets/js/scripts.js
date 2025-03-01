@@ -1,6 +1,6 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    populateCards();
+    //populateCards();
 });
 
 const PROJECT_CARDS = [

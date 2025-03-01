@@ -30,6 +30,8 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Wildcard selector to override default browser styles */
 
 * {
@@ -42,18 +44,62 @@
 :root {
 
     --heading-font: 'Gotham', Verdana, sans-serif;
-    --body-font: 'Verdana', Arial, sans-serif;
+    --body-font: 'Montserrat', Arial, sans-serif;
     --primary-color: #EC2F5A;
     --secondary-color: #CA864D;
-    --accent-color: #ABCF1B;
-
+    --accent-color: #27e285;
+    --text-color: #ececec;
+    --background-color: #181e29;
+    --debug-border: #27e285;
 }
 
-/* General Styles */
+/* Flexbox container */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 10px 60px;
+    max-width: 1400px;
+}
+
+.centered {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+
+/* Global styles */
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
-    color: #ececec;
+    color: var(--text-color);
     letter-spacing: 1px;
     word-spacing: 2px;
 }
@@ -63,45 +109,34 @@ h1 {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 600;
     letter-spacing: 2px;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: 1px;
     font-weight: 600;
 }
 
-body {
-    font-family: var(--body-font);
-    background-color: #182129;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column nowrap;
-    height: 100vh;
-    width: 100vw;
-}
-
-.gradient-heading {
+.gradient {
     background: linear-gradient(to right, #EC2F5A, #CA864D, #ABCF1B, #CA864D, #EC2F5A);
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate-gradient 9s linear infinite;
+    animation: animate-gradient 50s linear infinite;
 }
 
 /* CARDS */
 
 .card {
-    background-color: #EC2F5A;
+    background-color: #ffffff34;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    min-width: 200px;
     max-width: 400px;
 }
 
@@ -110,8 +145,9 @@ body {
 }
 
 .card img {
-    object-fit: cover;
     width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
 
@@ -129,63 +165,251 @@ body {
     color: var(--accent-color);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* Flex Container */
-
-.row {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    gap: 10px;
-    background-color: #ABCF1B;
-    margin: 10px 0;
-    width: 80%;
-}
-
-.container {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
-}
-
-
-.row-left {
-    justify-content: flex-start;
-}
-
-.column {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: baseline;
-    gap: 5px;
-}
-
-.c2 {
-    width: 46%;
-    background-color: #EC2F5A;
-}
-
-/* Main */
-
+/* MAIN */
 header {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-/* Experience Timeline */
+/* HERO */
+
+#hero {
+    border: var(--debug-border) 1px solid;
+    width: 100%;
+    min-height: 24vh;
+    flex-grow: 2;
+    text-align: center;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* CONTACT */
+
+#contact {
+    border: var(--debug-border) 1px solid;
+    width: 100px;
+    height: 80px;
+    flex-grow: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+/* ABOUT */
+
+#about {
+    border: var(--debug-border) 1px solid;
+    width: 100px;
+    height: 80px;
+    flex-grow: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+/*SOCIALS */
+
+#socials {
+    border: var(--debug-border) 1px solid;
+    width: 100%;
+    flex-grow: 2;
+
+    display: flex;
+    flex-flow: row wrap;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3.8vw;
+    min-height: 98px;
+}
+
+.linkbutton {
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    width: 90%;        
+    padding: 12px 20px;
+    text-align: center;
+    display: flex; 
+    align-items: center;
+    border-radius: 18px;
+    transition: max-width 0.3s ease-out;
+}
+
+.linkbutton span {
+    font-family: 'Gotham', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.linkbutton svg {
+    margin-right: 20px;
+    width: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.linkbutton h1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+/* EXPERIENCE */
+
+#work-experience {
+    border: var(--debug-border) 1px solid;
+    width: 100px;
+    min-height: 100px;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+#work-experience .skills-used {
+    color: var(--accent-color);
+    font-size: 14px;
+}
+
+#work-experience p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+#work-experience .subheading {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 12px 0;
+}
+
+.job {
+    margin: 24px 0;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 60px;
+}
+
+/* SKILLS */
+
+#skills {
+    border: var(--debug-border) 1px solid;
+    width: 100px;
+    min-height: 100px;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+.tag {
+    display: inline-block; 
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    margin: 5px 2px !important;
+    padding: 2.5px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* PROJECTS */
+
+#projects {
+    border: var(--debug-border) 1px solid;
+    width: 100%;
+    flex-grow: 2;
+}
 
 /* Animations */
 
 @keyframes animate-gradient {
     to { background-position: 200%; }
     
+}
+
+/* Media Query: Large or Landscape phones (>576px) */
+@media screen and (min-width: 576px) {
+
+    /* Social Media Buttons */
+    .linkbutton {
+        background-color: rgba(87, 84, 104, 0.397);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+        aspect-ratio: 1 / 1;    /* This keeps the aspect ratio 1:1 */
+        padding: 1px;
+        text-align: center;
+        flex: 1 1 5em;          /* Flex-grow, flex-shrink, flex-basis */
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        max-width: 5.5em;         /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
+        min-width: 4em;
+        border-radius: 30%;
+        transition: max-width 0.3s ease-out;
+    }
+
+    .linkbutton span {
+        display: none;
+    }
+
+    #git.linkbutton:hover {
+        background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
+        background-size: 800%;
+        fill: white;
+        animation: animate-gradient 9s linear infinite;
+        max-width: 6em;
+    }
+    #linkedin.linkbutton:hover {
+        background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
+        background-size: 800%;
+        fill: white;
+        animation: animate-gradient 9s linear infinite;
+        max-width: 6em;
+    }
+    #artstation:hover {
+        background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
+        background-size: 800%;
+        fill: white;
+        animation: animate-gradient 9s linear infinite;
+        max-width: 6em;
+    }
+
+    .linkbutton svg {
+        margin-right: 0;
+        fill: white;
+        width: 55%;
+    }
+
+    .linkbutton:hover svg {
+        fill: white;
+    }
+
+}
+
+/* Media Query: Laptops and Larger (1200px) */
+@media screen and (min-width: 1200px) {
+
+    #socials {
+        min-height: 110px;
+    }
+
+    
+    /* Social Buttons */
+    .linkbutton {
+        max-width: 6em;
+    }
+
+    #git.linkbutton:hover {
+        max-width: 6.7em;
+    }
+
+    #linkedin.linkbutton:hover {
+        max-width: 6.7em;
+    }
+
+    #artstation.linkbutton:hover {
+        max-width: 6.7em;
+    }
 }
