@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 70px;
 }
 
 h2 {
@@ -301,12 +301,37 @@ a {
 
 .job {
     margin: 24px 0;
+    position: relative;
 }
 
 /* Timeline */
 .timeline {
     position: relative;
     padding-left: 60px;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;                     /*Half of the timeline padding */
+    top: 8px;                      /* Align with first dot */
+    height: calc(100% - 220px);     /* Idk how this works, just play with px value til it doesnt overlap end */
+    width: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Timeline dots */
+.job::before {
+    content: '';
+    position: absolute;
+    top: 8px;                   /* Align with h3 */
+    left: -37.5px;              /* Half of the timeline padding + half of dot diameter - half of line width */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    z-index: 1;                 /* Keep dots above line */
 }
 
 /* SKILLS */
@@ -317,6 +342,11 @@ a {
     min-height: 100px;
     flex-grow: 1;
     min-width: 300px;
+}
+
+#skills h3 {
+    margin-top: 18px;
+    margin-bottom: 2px;
 }
 
 .tag {
