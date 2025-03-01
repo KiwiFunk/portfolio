@@ -369,6 +369,19 @@ a {
     flex-grow: 2;
 }
 
+/* FOOTER */
+footer {
+    border: var(--debug-border) 1px solid;
+    width: 100%;
+    flex-grow: 2;
+    margin-top: 60px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px;
+    color: #4c4c61;
+}
+
+
 /* Animations */
 
 @keyframes animate-gradient {
