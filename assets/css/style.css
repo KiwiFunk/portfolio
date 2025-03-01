@@ -196,7 +196,7 @@ header {
     border-right: 2px solid;
 
 
-    width: 58%;
+    width: 220px;
     white-space: nowrap;
     overflow: hidden;
     animation: typing 2s, cursor .4s step-end infinite alternate;
@@ -326,7 +326,7 @@ a {
     content: '';
     position: absolute;
     top: 8px;                   /* Align with h3 */
-    left: -37.5px;              /* Half of the timeline padding + half of dot diameter - half of line width */
+    left: -37px;                /* Half of the timeline padding + half of dot diameter - half of line width */
     width: 16px;
     height: 16px;
     border-radius: 50%;
