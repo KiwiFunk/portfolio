@@ -1,95 +1,49 @@
-// Triggering gradient change on H1 with mouse event on .linkbutton
-document.querySelectorAll('.linkbutton').forEach(item => {
-    item.addEventListener('mouseover', () => {
-        const heading = document.querySelector('#page-heading .gradient-heading');
-        heading.classList.add('hover-gradient-' + item.id);
-    });
-    item.addEventListener('mouseout', () => {
-        const heading = document.querySelector('#page-heading .gradient-heading');
-        heading.classList.remove('hover-gradient-git', 'hover-gradient-linkedin', 'hover-gradient-artstation');
-    });
-});
-
-// Framework for setting length of percentage bars in HTML
+// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.percentage-bar');
-    bars.forEach(bar => {
-        const width = bar.getAttribute('data-width');
-        bar.style.setProperty('--width', width + '%');
-    });
-})
-
-window.addEventListener('scroll', function() {
-    const landingPage = document.getElementById('landing-page');
-    const scrollPosition = window.scrollY;
-    const maxScroll = 400; // Adjust this value as needed
-
-    // Calculate opacity based on scroll position
-    const opacity = Math.max(0, 1 - scrollPosition / maxScroll);
-
-    // Apply the opacity to the background color and box-shadow
-    landingPage.style.backgroundColor = `rgba(238, 238, 238, ${opacity})`;
-    landingPage.style.boxShadow = `0 100px 28px rgba(238, 238, 238, ${opacity})`;
+    populateCards();
 });
 
+const PROJECT_CARDS = [
+    {
+        title: 'RG35XX+',
+        description: 'This is the first project',
+        skills: 'Blender',
+        image: 'assets/images/alex-price-front.jpg',
+        link: '#'
+    },
+    {
+        title: 'LCD-2',
+        description: 'This is the second project',
+        skills: '3DS Max || Substance Painter || Marmoset Toolbag',
+        image: 'assets/images/alex-price-close.jpg',
+        link: '#'
+    },
+    {
+        title: 'Raptor Warrior',
+        description: 'This is the third project',
+        skills: 'Maya || ZBrush || Unreal Engine',
+        image: 'assets/images/DinoRiderMain.jpg',
+        link: '#'
+    }
+];
 
-//Folio Gallery
+function populateCards() {
+    // Get the card container, Append a new card for every object in the array
+    const CARD_CONTAINER = document.getElementById('project-cards');
 
-document.querySelectorAll('.project-box').forEach(box => {
-    box.addEventListener('click', function () {
-        const isExpanded = this.classList.contains('expanded');
+    for (const card of PROJECT_CARDS) {
+        let newCard = document.createElement('div');
+        newCard.classList.add('card');
+        newCard.innerHTML = `
+            <img src="${card.image}" alt="${card.title}">
+            <hr>
+            <div class="card-content">
+                <h3>${card.title}</h3>
+                <p>${card.description}</p>
+                <span class="card-skills">${card.skills}</span>
+            </div>
+        `;
 
-        // Reset all boxes and headers
-        document.querySelectorAll('.project-box').forEach(b => {
-            b.classList.remove('expanded', 'shrink');
-            const header = b.querySelector('.project-header');
-            header.style.opacity = '1';
-            header.style.visibility = 'visible';
-            header.classList.remove('hidden');
-        });
-
-        // Hide headers immediately
-        document.querySelectorAll('.project-header').forEach(header => {
-            header.style.opacity = '0';
-        });
-
-        setTimeout(() => {
-            // Hide headers completely after transition
-            document.querySelectorAll('.project-header').forEach(header => {
-                header.classList.add('hidden');
-            });
-
-            if (!isExpanded) {
-                this.classList.add('expanded');
-                document.querySelectorAll('.project-box').forEach(b => {
-                    if (!b.classList.contains('expanded')) b.classList.add('shrink');
-                });
-            } else {
-                this.style.backgroundImage = this.getAttribute('data-main-image');
-            }
-        }, 300); // Delay matches CSS transition duration
-
-        if (isExpanded) {
-            setTimeout(() => {
-                document.querySelectorAll('.project-box').forEach(b => {
-                    const header = b.querySelector('.project-header');
-                    header.classList.remove('hidden');
-                    setTimeout(() => {
-                        header.style.opacity = '1';
-                        header.style.visibility = 'visible';
-                    }, 10); // Short delay to trigger the transition
-                });
-            }, 300); // Delay to match the total transition duration
-        }
-    });
-});
-
-document.querySelectorAll('.thumbnails img').forEach(thumb => {
-    thumb.addEventListener('click', function (event) {
-        event.stopPropagation();
-        const mainContainer = this.closest('.project-box');
-        mainContainer.style.backgroundImage = `url(${this.getAttribute('src')})`;
-    });
-});
-
-
+        CARD_CONTAINER.appendChild(newCard);
+    }
+};
