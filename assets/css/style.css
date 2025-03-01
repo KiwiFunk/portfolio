@@ -314,9 +314,9 @@ a {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 30px;                     /*Half of the timeline padding */
-    top: 8px;                      /* Align with first dot */
-    height: calc(100% - 220px);     /* Idk how this works, just play with px value til it doesnt overlap end */
+    left: 30px;                         /*Half of the timeline padding */
+    top: 8px;   
+    height: var(--timeline-height);     /* Calculated from DOM and set using updateTimelineHeight() function */
     width: 2px;
     background-color: var(--accent-color);
 }

@@ -1,7 +1,26 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     //populateCards();
+    updateTimelineHeight();
+    //Recalculate timeline length on window resize
+    window.addEventListener('resize', updateTimelineHeight);
 });
+
+function updateTimelineHeight() {
+    
+    //If there is more than one job, calculate distance from first to last entry. Else set to 0px
+    const timeline = document.querySelector('.timeline');
+    const firstJob = timeline.querySelector('.job:first-child');
+    const lastJob = timeline.querySelector('.job:last-child');
+    
+    if (firstJob && lastJob) {
+        const timelineHeight = lastJob.offsetTop - firstJob.offsetTop;
+        timeline.style.setProperty('--timeline-height', `${timelineHeight}px`);
+    }
+    else {
+        timeline.style.setProperty('--timeline-height', '0px');
+    }
+}
 
 const PROJECT_CARDS = [
     {
