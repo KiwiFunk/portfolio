@@ -65,7 +65,7 @@ const PROJECT_CARDS = [
         title: 'TypeRacer',
         description: 'A clone of MonkeyType created as a personal project to practice JavaScript.',
         skills: 'HTML || CSS || JavaScript',
-        image: 'assets/images/TypeRacer.png',
+        image: 'assets/images/TypeRacercrop.png',
         link: 'https://github.com/KiwiFunk/type-racer'
     }
 ];
@@ -78,13 +78,15 @@ function populateCards() {
         let newCard = document.createElement('div');
         newCard.classList.add('card');
         newCard.innerHTML = `
-            <img src="${card.image}" alt="${card.title}">
-            <div class="card-content">
-                <h3>${card.title}</h3>
-                <p>${card.description}</p>
-            </div>
-            <hr>
-            <span class="card-skills">${card.skills}</span>
+            <a href="${card.link}" target="_blank" rel="noopener noreferrer" aria-label="${card.title} project (opens in new tab)">
+                <img src="${card.image}" alt="${card.title}">
+                <div class="card-content">
+                    <h3>${card.title}</h3>
+                    <p>${card.description}</p>
+                </div>
+                <hr>
+                <span class="card-skills">${card.skills}</span>
+            </a>
         `;
 
         CARD_CONTAINER.appendChild(newCard);
