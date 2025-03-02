@@ -51,6 +51,7 @@
     --text-color: #ececec;
     --background-color: #181e29;
     --debug-border: #27e28500;
+    --card-color: rgba(87, 84, 104, 0.397);
 }
 
 /* Flexbox container */
@@ -133,7 +134,7 @@ h3 {
 /* CARDS */
 
 .card {
-    background-color: #ffffff34;
+    background-color: var(--card-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     min-width: 200px;
@@ -238,7 +239,7 @@ header {
 }
 
 .linkbutton {
-    background-color: white;
+    background-color: var(--card-color);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
     width: 90%;        
     padding: 12px 20px;
@@ -257,13 +258,14 @@ header {
 }
 
 .linkbutton svg {
+    fill: var(--text-color);
     margin-right: 20px;
     width: 45px;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
 }
 
 .linkbutton h1 {

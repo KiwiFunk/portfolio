@@ -1,13 +1,13 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    //populateCards();
+    populateCards();
     updateTimelineHeight();
     //Recalculate timeline length on window resize
     window.addEventListener('resize', updateTimelineHeight);
 });
 
 function updateTimelineHeight() {
-    
+
     //If there is more than one job, calculate distance from first to last entry. Else set to 0px
     const timeline = document.querySelector('.timeline');
     const firstJob = timeline.querySelector('.job:first-child');
@@ -25,23 +25,37 @@ function updateTimelineHeight() {
 const PROJECT_CARDS = [
     {
         title: 'RG35XX+',
-        description: 'This is the first project',
+        description: 'A product render created in Blender.',
         skills: 'Blender',
-        image: 'assets/images/alex-price-front.jpg',
+        image: 'assets/images/RG35XX.jpg',
         link: '#'
     },
     {
         title: 'LCD-2',
-        description: 'This is the second project',
+        description: 'Game-ready asset recreating the Audeze LCD-2\'s.',
         skills: '3DS Max || Substance Painter || Marmoset Toolbag',
-        image: 'assets/images/alex-price-close.jpg',
+        image: 'assets/images/LCD2.jpg',
         link: '#'
     },
     {
         title: 'Raptor Warrior',
-        description: 'This is the third project',
+        description: 'Fully rigged game-ready character and mount rendered in UE5.',
         skills: 'Maya || ZBrush || Unreal Engine',
-        image: 'assets/images/DinoRiderMain.jpg',
+        image: 'assets/images/CharacterDino.jpg',
+        link: '#'
+    },
+    {
+        title: 'Space Invaders',
+        description: 'A collaborative hackathon project recreating Space Invaders.',
+        skills: 'HTML || CSS || JavaScript',
+        image: 'assets/images/SpaceInvaders.png',
+        link: '#'
+    },
+    {
+        title: 'Snake',
+        description: 'Creating Snake using PyGame as a learning project.',
+        skills: 'Python || PyGame || Adobe Illustrator',
+        image: 'assets/images/Snake.png',
         link: '#'
     }
 ];
