@@ -50,7 +50,7 @@
     --accent-color: #27e285;
     --text-color: #ececec;
     --background-color: #181e29;
-    --debug-border: #27e285;
+    --debug-border: #27e28500;
     --card-color: rgba(87, 84, 104, 0.397);
 }
 
@@ -423,6 +423,70 @@ a {
     flex-grow: 2;
 }
 
+#contactform form {
+    padding: 10px 10px;
+    margin: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactform label {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0;
+    display: none;
+}
+
+#contactform input, #contactform textarea {
+    width: 100%;
+    min-width: 250px;
+    max-width: 600px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 1px solid #00000000;
+    background-color: var(--card-color);
+
+    /* User Text */
+    color: var(--text-color); 
+    font-family: var(--body-font);  
+}
+
+#contactform textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+#contactform input:focus, 
+#contactform textarea:focus {
+    outline: none;                                  /* Remove default outline */
+    border: 1px solid var(--accent-color);  
+    box-shadow: 0 0 5px rgba(39, 226, 133, 0.3);  
+}
+
+#contactform input::placeholder, 
+#contactform textarea::placeholder {
+    color: var(--text-color);
+    font-family: var(--body-font); 
+    opacity: 0.6;
+    letter-spacing: 0.4px;
+}
+
+#contactform button {
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
 /* FOOTER */
 footer {
