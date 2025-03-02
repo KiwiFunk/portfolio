@@ -156,7 +156,12 @@
         <section id="contactform">
             <h2>Contact</h2>
             <p></p>
-            <form name="contactform" method="POST" netlify>
+            <form name="contactform" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name (Not Required)">
                     
