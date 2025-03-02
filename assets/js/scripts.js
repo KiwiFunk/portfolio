@@ -37,7 +37,7 @@ const PROJECT_CARDS = [
         title: 'LCD-2',
         description: 'Game-ready asset recreating the Audeze LCD-2\'s.',
         skills: '3DS Max || Substance Painter || Toolbag',
-        image: 'assets/images/LCD2.jpg',
+        image: ['assets/images/LCD2.jpg', 'assets/images/LCD2alt.jpg'],
         link: 'https://www.artstation.com/artwork/n0OddK'
     },
     {
@@ -75,11 +75,13 @@ function populateCards() {
     const CARD_CONTAINER = document.getElementById('project-cards');
 
     for (const card of PROJECT_CARDS) {
+
         let newCard = document.createElement('div');
+
         newCard.classList.add('card');
         newCard.innerHTML = `
             <a href="${card.link}" target="_blank" rel="noopener noreferrer" aria-label="${card.title} project (opens in new tab)">
-                <img src="${card.image}" alt="${card.title}">
+                <img src="${displayImages(card.image)}" alt="${card.title}">
                 <div class="card-content">
                     <h3>${card.title}</h3>
                     <p>${card.description}</p>
@@ -88,7 +90,12 @@ function populateCards() {
                 <span class="card-skills">${card.skills}</span>
             </a>
         `;
-
         CARD_CONTAINER.appendChild(newCard);
     }
 };
+
+function displayImages(images) {
+    // Check to see if single image, or multiple images for image key
+    return Array.isArray(images) ? images[0] : images;
+}
+
