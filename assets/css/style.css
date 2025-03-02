@@ -356,7 +356,7 @@ a {
     flex-direction: column; /* Stack the elements inside the card vertically */
     margin: 2px;
     overflow: hidden;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
 }
 
 .card:hover {
@@ -448,6 +448,18 @@ footer {
 
 /* Media Query: Large or Landscape phones (>576px) */
 @media screen and (min-width: 576px) {
+
+    /* Card Hover Features */
+    .card img {
+    filter: grayscale(01) brightness(0.8) contrast(0.8); 
+    transition: filter 0.3s ease;
+    }
+
+    .card:hover img {
+        /* Remove filters on hover for full color */
+        filter: none;
+    }
+        
 
     #contact {
         min-width: 200px;
