@@ -122,13 +122,13 @@ h3 {
 }
 
 .gradient {
-    background: linear-gradient(to right, #EC2F5A, #CA864D, #ABCF1B, #CA864D, #EC2F5A);
+    background: linear-gradient(to right, #EC2F5A, #BF4E47, #27e285, #BF4E47, #EC2F5A);
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate-gradient 50s linear infinite;
+    animation: animate-gradient 40s linear infinite;
 }
 
 /* MAIN */
@@ -354,6 +354,13 @@ a {
     flex-direction: column; /* Stack the elements inside the card vertically */
     margin: 2px;
     overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+    transition: all 0.3s ease;
 }
 
 .card a {
