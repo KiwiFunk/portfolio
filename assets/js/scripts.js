@@ -28,35 +28,42 @@ const PROJECT_CARDS = [
         description: 'A product render created in Blender.',
         skills: 'Blender',
         image: 'assets/images/RG35XX.jpg',
-        link: '#'
+        link: 'https://www.artstation.com/artwork/YBmmNq'
     },
     {
         title: 'LCD-2',
         description: 'Game-ready asset recreating the Audeze LCD-2\'s.',
         skills: '3DS Max || Substance Painter || Marmoset Toolbag',
         image: 'assets/images/LCD2.jpg',
-        link: '#'
+        link: 'https://www.artstation.com/artwork/n0OddK'
     },
     {
         title: 'Raptor Warrior',
         description: 'Fully rigged game-ready character and mount rendered in UE5.',
         skills: 'Maya || ZBrush || Unreal Engine',
         image: 'assets/images/CharacterDino.jpg',
-        link: '#'
+        link: 'https://www.artstation.com/artwork/lDlVPY'
     },
     {
         title: 'Space Invaders',
         description: 'A collaborative hackathon project recreating Space Invaders.',
         skills: 'HTML || CSS || JavaScript',
         image: 'assets/images/SpaceInvaders.png',
-        link: '#'
+        link: 'https://github.com/KiwiFunk/space-invaders'
     },
     {
         title: 'Snake',
         description: 'Creating Snake using PyGame as a learning project.',
         skills: 'Python || PyGame || Adobe Illustrator',
         image: 'assets/images/Snake.png',
-        link: '#'
+        link: 'https://github.com/KiwiFunk/snake-game'
+    },
+    {
+        title: 'TypeRacer',
+        description: 'A clone of MonkeyType created as a personal project to practice JavaScript.',
+        skills: 'Python || PyGame || Adobe Illustrator',
+        image: 'assets/images/TypeRacer.png',
+        link: 'https://github.com/KiwiFunk/type-racer'
     }
 ];
 
