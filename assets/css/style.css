@@ -131,55 +131,6 @@ h3 {
     animation: animate-gradient 50s linear infinite;
 }
 
-/* CARDS */
-
-.card {
-    background-color: var(--card-color);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    min-width: 200px;
-    max-width: 400px;
-}
-
-.card .card-content {
-    padding: 10px 20px;
-}
-
-.card hr {
-    border: 0;
-    border-top: 1px solid rgba(255, 242, 242, 0.096);
-    margin: 0;
-    width: 100%;
-}
-
-.card h3 {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.card p {
-    font-size: 15px;
-    padding: 2px 0;
-}
-
-.card img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    display: block;
-}
-
-.card-skills {
-    display: inline-block;
-    font-size: 11px;
-    word-spacing: -1px;
-    text-transform: uppercase;
-    font-weight: 800;
-    color: var(--accent-color);
-    padding: 10px 20px;
-}
-
 /* MAIN */
 header {
     margin-bottom: 20px;
@@ -386,8 +337,68 @@ a {
 }
 
 #project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     margin: 20px 0;
 }
+
+/* CARD STYLING */
+
+.card {
+    background-color: var(--card-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%; /* The card should take the available height, or set a fixed height if needed */
+    display: flex; /* Make the card a flex container */
+    flex-direction: column; /* Stack the elements inside the card vertically */
+    margin: 2px;
+}
+
+.card .card-content {
+    padding: 10px 20px;
+    display: flex; /* Make card-content a flex container */
+    flex-direction: column; /* Stack the content inside the card vertically */
+    flex-grow: 1; /* Allow card-content to take up the available space */
+}
+
+.card hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 242, 242, 0.096);
+    margin: 0;
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 15px;
+    padding: 2px 0;
+    flex-grow: 1; /* Allow the <p> to grow and fill available space */
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Fixed height for the image */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.card-skills {
+    display: inline-block;
+    font-size: 11px;
+    word-spacing: -1px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--accent-color);
+    padding: 10px 20px;
+}
+
 
 /* FOOTER */
 footer {
@@ -508,5 +519,9 @@ footer {
 
     #artstation.linkbutton:hover {
         max-width: 6.7em;
+    }
+
+    #project-cards {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

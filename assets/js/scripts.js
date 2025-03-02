@@ -36,7 +36,7 @@ const PROJECT_CARDS = [
     {
         title: 'LCD-2',
         description: 'Game-ready asset recreating the Audeze LCD-2\'s.',
-        skills: '3DS Max || Substance Painter || Marmoset Toolbag',
+        skills: '3DS Max || Substance Painter || Toolbag',
         image: 'assets/images/LCD2.jpg',
         link: 'https://www.artstation.com/artwork/n0OddK'
     },
