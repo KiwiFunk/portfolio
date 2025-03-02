@@ -41,7 +41,7 @@ const PROJECT_CARDS = [
         link: 'https://www.artstation.com/artwork/n0OddK'
     },
     {
-        title: 'Raptor Warrior',
+        title: 'Raptor Rider',
         description: 'Fully rigged game-ready character and mount rendered in UE5.',
         skills: 'Maya || ZBrush || Unreal Engine',
         image: 'assets/images/CharacterDino.jpg',
