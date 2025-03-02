@@ -50,7 +50,7 @@
     --accent-color: #27e285;
     --text-color: #ececec;
     --background-color: #181e29;
-    --debug-border: #27e28500;
+    --debug-border: #27e285;
     --card-color: rgba(87, 84, 104, 0.397);
 }
 
@@ -417,12 +417,16 @@ a {
     padding: 10px 16px;
 }
 
+/* CONTACT FORM */
+#contactform {
+    border: var(--debug-border) 1px solid;
+    flex-grow: 2;
+}
+
 
 /* FOOTER */
 footer {
     border: var(--debug-border) 1px solid;
-    width: 100%;
-    flex-grow: 2;
     margin-top: 40px;
     font-size: 12px;
     font-weight: 600;
