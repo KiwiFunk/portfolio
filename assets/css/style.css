@@ -142,7 +142,24 @@ h3 {
 }
 
 .card .card-content {
-    padding: 15px;
+    padding: 10px 20px;
+}
+
+.card hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 242, 242, 0.096);
+    margin: 0;
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 15px;
+    padding: 2px 0;
 }
 
 .card img {
@@ -150,20 +167,17 @@ h3 {
     height: 200px; /* Fixed height for consistency */
     object-fit: cover;
     border-radius: 10px 10px 0 0;
-}
-
-.card hr {
-    border: 0;
-    border-top: px solid #ececec;
-    margin: 0;
+    display: block;
 }
 
 .card-skills {
+    display: inline-block;
     font-size: 11px;
     word-spacing: -1px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--accent-color);
+    padding: 10px 20px;
 }
 
 /* MAIN */
@@ -371,12 +385,16 @@ a {
     flex-grow: 2;
 }
 
+#project-cards {
+    margin: 20px 0;
+}
+
 /* FOOTER */
 footer {
     border: var(--debug-border) 1px solid;
     width: 100%;
     flex-grow: 2;
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 12px;
     font-weight: 600;
     padding: 10px;

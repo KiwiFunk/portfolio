@@ -1,9 +1,12 @@
-// Wait for the DOM to be fully loaded
+// DOM Content Load
 document.addEventListener('DOMContentLoaded', function() {
-    populateCards();
-    updateTimelineHeight();
+
+    populateCards();                // Populate project cards
+    updateTimelineHeight();         // Calculate timeline height on page load
+
     //Recalculate timeline length on window resize
     window.addEventListener('resize', updateTimelineHeight);
+
 });
 
 function updateTimelineHeight() {
@@ -61,7 +64,7 @@ const PROJECT_CARDS = [
     {
         title: 'TypeRacer',
         description: 'A clone of MonkeyType created as a personal project to practice JavaScript.',
-        skills: 'Python || PyGame || Adobe Illustrator',
+        skills: 'HTML || CSS || JavaScript',
         image: 'assets/images/TypeRacer.png',
         link: 'https://github.com/KiwiFunk/type-racer'
     }
@@ -76,12 +79,12 @@ function populateCards() {
         newCard.classList.add('card');
         newCard.innerHTML = `
             <img src="${card.image}" alt="${card.title}">
-            <hr>
             <div class="card-content">
                 <h3>${card.title}</h3>
                 <p>${card.description}</p>
-                <span class="card-skills">${card.skills}</span>
             </div>
+            <hr>
+            <span class="card-skills">${card.skills}</span>
         `;
 
         CARD_CONTAINER.appendChild(newCard);
