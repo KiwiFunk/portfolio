@@ -1,0 +1,50 @@
+[
+    {
+        "title": "RG35XX+",
+        "description": "A product render created in Blender.",
+        "skills": "Blender",
+        "image": "assets/images/RG35XX.jpg",
+        "link": "https://www.artstation.com/artwork/YBmmNq",
+        "categories": ["3D"]
+    },
+    {
+        "title": "LCD-2",
+        "description": "Game-ready asset recreating the Audeze LCD-2's.",
+        "skills": "3DS Max || Substance Painter || Toolbag",
+        "image": ["assets/images/LCD2.jpg", "assets/images/LCD2alt.jpg"],
+        "link": "https://www.artstation.com/artwork/n0OddK",
+        "categories": ["3D", "GameDev"]
+    },
+    {
+        "title": "Raptor Rider",
+        "description": "Fully rigged game-ready character and mount rendered in UE5.",
+        "skills": "Maya || ZBrush || Unreal Engine",
+        "image": "assets/images/CharacterDino.jpg",
+        "link": "https://www.artstation.com/artwork/lDlVPY",
+        "categories": ["3D", "GameDev"]
+    },
+    {
+        "title": "Space Invaders",
+        "description": "A collaborative hackathon project recreating Space Invaders.",
+        "skills": "HTML || CSS || JavaScript || FL Studio",
+        "image": "assets/images/SpaceInvaders.png",
+        "link": "https://github.com/KiwiFunk/space-invaders",
+        "categories": ["Programming", "GameDev"]
+    },
+    {
+        "title": "Snake",
+        "description": "Creating Snake using PyGame as a learning project.",
+        "skills": "Python || PyGame || Adobe Illustrator",
+        "image": "assets/images/Snake.png",
+        "link": "https://github.com/KiwiFunk/snake-game",
+        "categories": ["Programming", "GameDev"]
+    },
+    {
+        "title": "TypeRacer",
+        "description": "A clone of MonkeyType created as a personal project to practice JavaScript.",
+        "skills": "HTML || CSS || JavaScript",
+        "image": "assets/images/TypeRacercrop.png",
+        "link": "https://github.com/KiwiFunk/type-racer",
+        "categories": ["Programming"]
+    }
+]
