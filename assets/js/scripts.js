@@ -96,7 +96,7 @@ function populateCards() {
     CARD_CONTAINER.innerHTML = '';                  // Clear previous cards
 
     // Calculate which cards to display based on current page
-    const startIdx = (currentPage - 1) * cardsPerPage;
+    const startIdx = (currentPage - 1) * cardsPerPage;              //Page 1 = 0*6 which starts with index zero, page 2 = 1*6 which starts with index 6
     const endIdx = startIdx + cardsPerPage;
     const cardsToDisplay = filteredCards.slice(startIdx, endIdx);
 
