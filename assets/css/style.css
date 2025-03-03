@@ -61,7 +61,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: 80%;
+    width: 82%;
     gap: 50px 110px;
     max-width: 1400px;
 }
@@ -122,7 +122,7 @@ h3 {
 }
 
 .gradient {
-    background: linear-gradient(to right, #EC2F5A, #BF4E47, #27e285, #BF4E47, #EC2F5A);
+    background: linear-gradient(to right, #9155ff, #27e285, #864df1);
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -239,7 +239,7 @@ nav a {
 
     display: flex;
     flex-flow: row wrap;
-    padding: 2rem;
+    padding: 2rem 0.95rem;
     justify-content: center;
     align-items: center;
     gap: 3.8vw;
@@ -476,7 +476,7 @@ a {
 }
 
 #contactform label {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     margin: 10px 0;
     display: none;
@@ -491,6 +491,7 @@ a {
     border-radius: 10px;
     border: 1px solid #00000000;
     background-color: var(--card-color);
+    font-size: 16px;
 
     /* User Text */
     color: var(--text-color); 
@@ -500,6 +501,7 @@ a {
 #contactform textarea {
     resize: vertical;
     min-height: 160px;
+    font-size: 16px;
 }
 
 #contactform input:focus, 
@@ -507,6 +509,7 @@ a {
     outline: none;                                  /* Remove default outline */
     border: 1px solid var(--accent-color);  
     box-shadow: 0 0 5px rgba(39, 226, 133, 0.3);  
+    font-size: 16px;
 }
 
 #contactform input::placeholder, 
