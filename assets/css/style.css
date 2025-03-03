@@ -409,6 +409,31 @@ a {
     flex-grow: 2;
 }
 
+#filters {
+    margin: 10px 0;
+    display: flex;
+    gap: 8px;
+}
+
+#filters button {
+    padding: 4px 8px;
+    text-transform: uppercase;
+    font-family: var(--body-font);
+    font-size: 15px;
+    font-weight: 800;
+    border-radius: 8px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--accent-color);
+    
+}
+
+#filters button.selected-filter {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: 1px solid var(--accent-color);
+}
+
 #project-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

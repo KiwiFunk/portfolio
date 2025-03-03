@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.tagName === 'BUTTON') {
             const filter = e.target.getAttribute('data-filter');
             filterCards(filter);
+            e.target.classList.toggle('selected-filter');
         }
     });
     
-
 });
 
 function handleNavToggle() {
@@ -124,7 +124,7 @@ function populateCards(cards = PROJECT_CARDS) {
 };
 
 function displayImages(images) {
-    // Check to see if single image, or multiple images for image key
+    // Check to see if single image, or multiple images for image key. Planned to expand to multiple images per card.
     return Array.isArray(images) ? images[0] : images;
 }
 
@@ -136,19 +136,14 @@ function filterCards(filter) {
     let filteredCardObjects = [];
     
     //Update selectedFilters array
-    if (selectedFilters.includes(filter)) {
-        selectedFilters = selectedFilters.filter(item => item !== filter);
-    }
-    else {
-        selectedFilters.push(filter);
-    }
+    if (selectedFilters.includes(filter)) selectedFilters = selectedFilters.filter(item => item !== filter);
+    else selectedFilters.push(filter);
 
     //Populate filteredCardObjects array with cards that match all selected filters
     filteredCardObjects = unfilteredCardsArray.filter(card => {
         return selectedFilters.every(filter => card.catagories.includes(filter));
     });
     
-    //Run populateCards function with the filtered array as an argument
     populateCards(filteredCardObjects);
 }
 
