@@ -219,7 +219,13 @@ function calculateCardsPerPage() {
     const card = document.querySelector('.card');
     const cardContainer = document.getElementById('project-cards');
 
-    // Get the width of the card container card
+    // If there's no cards in the DOM, we can't calculate
+    if (!card) {
+        console.log("ERROR: No cards available to calculate total cards.");
+        return;
+    }
+
+    // Get the width of the card container and card
     const cardWidth = card.offsetWidth;
     const containerWidth = cardContainer.offsetWidth;
 
@@ -230,12 +236,20 @@ function calculateCardsPerPage() {
     //Return total number of cards to display per page
     switch(totalColumns) {
         case 3:             //Desktop view
-            return 6;
+            cardsPerPage = 3;
+            break;
         case 2:             //Tablet view
-            return 4;
+            cardsPerPage = 4;
+            break;
         case 1:             //Mobile view
-            return 3;
+            cardsPerPage = 3;
+            break;
         default:            //Default to desktop view
-            return 6;
+            cardsPerPage = 3;
+            break;
     }
+
+    // Recalculate total pages and display the cards
+    calcTotalPages();
+    populateCards();
 }
