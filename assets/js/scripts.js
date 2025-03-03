@@ -1,56 +1,4 @@
-// DOM Content Load
-document.addEventListener('DOMContentLoaded', function() {
-
-    handleNavToggle();                  // Close burger menu on link click
-    populateCards();                    // Populate project cards
-    updateTimelineHeight();             // Calculate timeline height on page load
-
-    //WINDOW RESIZE EVENT LISTENER
-    window.addEventListener('resize', () => {
-        updateTimelineHeight();         //Recalculate timeline length on window resize
-        calculateCardsPerPage();        //Recalculate number of cards per page on window resize
-    });
-
-    //FILTERS EVENT LISTENER
-    document.getElementById('filters').addEventListener('click', (e) => {
-        if (e.target.tagName === 'SPAN') {
-
-            const filter = e.target.getAttribute('data-filter');
-            e.target.classList.toggle('selected-filter');
-
-            filterCards(filter);
-        }
-    });
-});
-
-function handleNavToggle() {
-    // Add listener to each list item, close burger menu on link click
-    const navLinks = document.querySelectorAll('nav ul li a');
-    const navToggle = document.getElementById('nav-toggle');
-
-    // Add listener to each list item
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            navToggle.checked = false; 
-        });
-    });
-}
-
-function updateTimelineHeight() {
-    //If there is more than one job, calculate distance from first to last entry. Else set to 0px
-    const timeline = document.querySelector('.timeline');
-    const firstJob = timeline.querySelector('.job:first-child');
-    const lastJob = timeline.querySelector('.job:last-child');
-    
-    if (firstJob && lastJob) {
-        const timelineHeight = lastJob.offsetTop - firstJob.offsetTop;
-        timeline.style.setProperty('--timeline-height', `${timelineHeight}px`);
-    }
-    else {
-        timeline.style.setProperty('--timeline-height', '0px');
-    }
-}
-
+// CARDS DATA (Move to JSON file in future)
 const PROJECT_CARDS = [
     {
         title: 'RG35XX+',
@@ -101,6 +49,79 @@ const PROJECT_CARDS = [
         catagories: ['Programming']
     }
 ];
+
+
+// DOM Content Load
+document.addEventListener('DOMContentLoaded', function() {
+
+    handleNavToggle();                  // Close burger menu on link click
+    populateCards();                    // Populate project cards
+    updateTimelineHeight();             // Calculate timeline height on page load
+
+    //WINDOW RESIZE EVENT LISTENER
+    window.addEventListener('resize', () => {
+        updateTimelineHeight();         //Recalculate timeline length on window resize
+        calculateCardsPerPage();        //Recalculate number of cards per page on window resize
+    });
+
+    //FILTERS EVENT LISTENER
+    document.getElementById('filters').addEventListener('click', (e) => {
+        if (e.target.tagName === 'SPAN') {
+
+            const filter = e.target.getAttribute('data-filter');
+            e.target.classList.toggle('selected-filter');
+
+            filterCards(filter);
+        }
+    });
+});
+
+//GLOBAL VARIABLES
+let currentPage = 1;    //Start on the first page
+let totalPages = 1;     //Init totalPages
+let cardsPerPage = 6;   //Default Value (We need to popualate cards for calculateCardsPerPage to work)
+let filteredCards = PROJECT_CARDS;
+
+//PAGINATION FUNCTIONS
+function calculateTotalPages() {
+    //Calculate total pages based on number of cards and cards per page
+    totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+    //updatePaginationButtons();
+}
+
+
+
+
+
+
+
+function handleNavToggle() {
+    // Add listener to each list item, close burger menu on link click
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const navToggle = document.getElementById('nav-toggle');
+
+    // Add listener to each list item
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            navToggle.checked = false; 
+        });
+    });
+}
+
+function updateTimelineHeight() {
+    //If there is more than one job, calculate distance from first to last entry. Else set to 0px
+    const timeline = document.querySelector('.timeline');
+    const firstJob = timeline.querySelector('.job:first-child');
+    const lastJob = timeline.querySelector('.job:last-child');
+    
+    if (firstJob && lastJob) {
+        const timelineHeight = lastJob.offsetTop - firstJob.offsetTop;
+        timeline.style.setProperty('--timeline-height', `${timelineHeight}px`);
+    }
+    else {
+        timeline.style.setProperty('--timeline-height', '0px');
+    }
+}
 
 function populateCards(cards = PROJECT_CARDS) {
     // Get the card container, Append a new card for every object in the array
@@ -172,7 +193,7 @@ function calculateCardsPerPage() {
     // Calculate the number of cards that fit in the container for a single row
     const totalColumns = Math.floor(containerWidth / cardWidth);
     console.log(totalColumns);
-    
+
     //Return total number of cards to display per page
     switch(totalColumns) {
         case 3:             //Desktop view
