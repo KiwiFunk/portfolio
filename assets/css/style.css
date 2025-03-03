@@ -52,7 +52,7 @@
     --background-color: #181e29;
     --card-color: rgba(87, 84, 104, 0.397);
     /* Use opacity to show/hide section bounding boxes for debugging */
-    --debug-border: #27e28500;
+    --debug-border: #27e285;
 }
 
 /* Flexbox container */
@@ -154,7 +154,7 @@ nav {
 /* Burger Icon */
 nav span {
     font-weight: 900;
-    font-size: 30px;
+    font-size: 40px;
     border: 1px solid var(--debug-border);
     margin: 10px 0;
     display: flex;
