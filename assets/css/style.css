@@ -398,6 +398,7 @@ a {
     margin: 2px;
     overflow: hidden;
     transition: all 0.15s ease;
+    display: flex;
 }
 
 .card:hover {
