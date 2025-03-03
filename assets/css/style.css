@@ -630,6 +630,15 @@ footer {
     50% { border-color: transparent }
 }
 
+/* Media Queries */
+
+@media (hover: none) {
+    #filters span:hover {
+        transform: none;
+        transition: none;
+    }
+}
+
 /* Media Query: Large or Landscape phones (>576px) */
 @media screen and (min-width: 576px) {
 
