@@ -97,6 +97,7 @@ let currentPage = 1;    //Start on the first page
 let totalPages = 1;     //Init totalPages
 let cardsPerPage = 6;   //Default Value (We need to popualate cards for calculateCardsPerPage to work)
 let filteredCards = PROJECT_CARDS;
+let selectedFilters = [];
 
 //PAGINATION FUNCTIONS
 function calcTotalPages() {
@@ -182,24 +183,27 @@ function updateTimelineHeight() {
     }
 }
 
-let selectedFilters = [];
-
 function filterCards(filter) {
+    // Update the selectedFilters array
+    if (selectedFilters.includes(filter)) {
+        selectedFilters = selectedFilters.filter(item => item !== filter);
+    } else {
+        selectedFilters.push(filter);
+    }
 
-    const unfilteredCardsArray = PROJECT_CARDS;
-    let filteredCardObjects = [];
-    
-    //Update selectedFilters array
-    if (selectedFilters.includes(filter)) selectedFilters = selectedFilters.filter(item => item !== filter);
-    else selectedFilters.push(filter);
-
-    //Populate filteredCardObjects array with cards that match all selected filters
-    filteredCardObjects = unfilteredCardsArray.filter(card => {
+    // Filter the cards based on selectedFilters
+    filteredCards = PROJECT_CARDS.filter(card => {
         return selectedFilters.every(filter => card.catagories.includes(filter));
     });
-    
-    populateCards(filteredCardObjects);
+
+    // Reset to the first page when filtering
+    currentPage = 1;
+
+    // Recalculate total pages and display the cards
+    calcTotalPages();
+    populateCards();
 }
+
 
 //Calculate the dimensions of a card
 //get width of DOM
