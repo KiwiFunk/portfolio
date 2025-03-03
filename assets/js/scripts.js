@@ -50,7 +50,7 @@ const PROJECT_CARDS = [
     {
         title: 'Space Invaders',
         description: 'A collaborative hackathon project recreating Space Invaders.',
-        skills: 'HTML || CSS || JavaScript',
+        skills: 'HTML || CSS || JavaScript || FL Studio',
         image: 'assets/images/SpaceInvaders.png',
         link: 'https://github.com/KiwiFunk/space-invaders'
     },

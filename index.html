@@ -14,12 +14,20 @@
 <body>
 
     <header class="container">
+        
         <nav>
+            <!-- The hamburger menu -->
+            <label for='menu' tabindex="0">
+                <span>&#9776;</span>
+            </label>
+            <input id='menu' type='checkbox' />
+            <!-- Last ul child of nav will be collapsed into burger menu -->
             <ul>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contactform">Contact</a></li>
             </ul>
         </nav>
+
         <section id="hero">
             <div>
                 <h1 class="gradient">Hi, I'm Alex!</h1>

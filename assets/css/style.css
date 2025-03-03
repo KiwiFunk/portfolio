@@ -50,8 +50,9 @@
     --accent-color: #28e788;
     --text-color: #ececec;
     --background-color: #181e29;
-    --debug-border: #27e285;
     --card-color: rgba(87, 84, 104, 0.397);
+    /* Use opacity to show/hide section bounding boxes for debugging */
+    --debug-border: #27e28500;
 }
 
 /* Flexbox container */
@@ -140,24 +141,52 @@ header {
 /* NAVBAR */
 
 nav {
+    border: var(--debug-border) 1px solid;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row wrap;
     width: 100%;
-    padding: 15px 0;
     text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-
+    opacity: 0.8;
+    user-select: none;
 }
 
-nav ul {
+/* Burger Icon */
+nav span {
+    font-weight: 900;
+    font-size: 30px;
+    border: 1px solid var(--debug-border);
+    margin: 10px 0;
     display: flex;
-    gap: 20px;
+}
+
+nav ul:last-child {
+    width: 100%;
+    flex-basis: 100%;
+    list-style-type: none;
 }
 
 nav ul li {
-    list-style: none;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+input[type='checkbox']:not(:checked)+ul {
+    display: none;
+}
+
+nav input[type='checkbox'], nav label {
+    display: none;
+}
+
+nav label {
+    text-align: right;
+    display: block;
+    padding: 0.5em;
+    line-height: 1.6em;
+    align-self: center;
 }
 
 nav a:hover {
@@ -167,7 +196,6 @@ nav a:hover {
 
 nav a {
     transition: color 0.3s ease;
-    opacity: 0.8;
 }
 
 /* HERO */
@@ -571,6 +599,28 @@ footer {
 /* Media Query: Large or Landscape phones (>576px) */
 @media screen and (min-width: 576px) {
 
+    /* NAVBAR DESKTOP */
+    nav {
+        justify-content: flex-end;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        display: flex !important;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    nav ul li {
+        width: auto;
+        border: 1px solid var(--debug-border);
+    }
+
+    nav label {
+        display: none;
+    }
+
+   
     /* Card Hover Features */
     .card img {
     filter: grayscale(01) brightness(0.8) contrast(0.8); 
