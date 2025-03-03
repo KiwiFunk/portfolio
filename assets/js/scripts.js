@@ -9,7 +9,6 @@ let currentPage = 1;        //Start on the first page
 let totalPages = 1;         //Init totalPages
 let cardsPerPage = 6;       //Default Value (We need to popualate cards for calculateCardsPerPage to work)
 
-
 //Fetch project data from JSON file
 async function fetchProjectData() {
     try {
@@ -43,11 +42,13 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 // EVENT LISTENERS
 function setupEventListeners() {
+    // Window Resize Event
     window.addEventListener('resize', () => {
         updateTimelineHeight();
         calculateCardsPerPage();
     });
 
+    // Filter Buttons
     document.getElementById('filters').addEventListener('click', (e) => {
         if (e.target.tagName === 'SPAN') {
             const filter = e.target.getAttribute('data-filter');
@@ -82,31 +83,33 @@ function calcTotalPages() {
 }
 
 function updatePaginationButtons() {
+    // Populate page-info span with current page and total pages
     const pageInfo = document.getElementById('page-info');
     pageInfo.textContent = `${currentPage} of ${totalPages}`;
 
     const prevButton = document.getElementById('prev-page');
     const nextButton = document.getElementById('next-page');
 
-    // Add/remove disabled class instead of disabled attribute
+    // Toggle disabled class based on current page
     prevButton.classList.toggle('disabled', currentPage === 1);
     nextButton.classList.toggle('disabled', currentPage === totalPages);
+
 }
 
 function populateCards() {
     // Get the card container, Append a new card for every object in the array
 
-    const CARD_CONTAINER = document.getElementById('project-cards');
-    CARD_CONTAINER.innerHTML = '';                  // Clear previous cards
+    const CARD_CONTAINER = document.getElementById('project-cards');    //Get the card container
+    CARD_CONTAINER.innerHTML = '';                                      //Clear the container before populating
 
     // Calculate which cards to display based on current page
-    const startIdx = (currentPage - 1) * cardsPerPage;              //Page 1 = 0*6 which starts with index zero, page 2 = 1*6 which starts with index 6
+    const startIdx = (currentPage - 1) * cardsPerPage;                  //Page 1 = 0*6 which starts with index zero, page 2 = 1*6 which starts with index 6
     const endIdx = startIdx + cardsPerPage;
-    const cardsToDisplay = filteredCards.slice(startIdx, endIdx);
+    const cardsToDisplay = filteredCards.slice(startIdx, endIdx);       //Slice the filtered array based on start and end index
 
-    for (const card of cardsToDisplay) {
+    for (const card of cardsToDisplay) {                                //Loop through the slice 
 
-        let newCard = document.createElement('div');
+        let newCard = document.createElement('div');                    //Create a new card
 
         newCard.classList.add('card');
         newCard.innerHTML = `
@@ -120,10 +123,9 @@ function populateCards() {
                 <span class="card-skills">${card.skills}</span>
             </a>
         `;
-        CARD_CONTAINER.appendChild(newCard);
+        CARD_CONTAINER.appendChild(newCard);                            //Append the new card to the container
     }
 };
-
 
 function displayImages(images) {
     // Check to see if single image, or multiple images for image key. Planned to expand to multiple images per card.
@@ -160,37 +162,23 @@ function updateTimelineHeight() {
 
 function filterCards(filter) {
     // Update the selectedFilters array
-    if (selectedFilters.includes(filter)) {
-        selectedFilters = selectedFilters.filter(item => item !== filter);
-    } else {
-        selectedFilters.push(filter);
-    }
+    if (selectedFilters.includes(filter)) selectedFilters = selectedFilters.filter(item => item !== filter);
+    else selectedFilters.push(filter);
 
-    // Filter the cards based on selectedFilters
+    // Update the filteredCards array with the selected filters
     filteredCards = PROJECT_CARDS.filter(card => {
         return selectedFilters.every(filter => card.categories.includes(filter));
     });
 
-    // Reset to the first page when filtering
-    currentPage = 1;
+    currentPage = 1;                    // Reset to the first page after filtering
 
-    // Recalculate total pages and display the cards
-    calcTotalPages();
-    populateCards();
+    calcTotalPages();                   // Recalculate total pages
+    populateCards();                    // Repopulate the cards
 }
 
-
-//Calculate the dimensions of a card
-//get width of DOM
-//Calculate how many cards are currently on screen in a row
-
-//3 means desktop mode
-//2 means tablet mode
-//1 means mobile mode
-
-//Use to calculate total no of cards to display with pagination. desktop is 2x3, tablet is 3x2, mobile is 3x1 (rows x columns)
 function calculateCardsPerPage() {
-    
+    //Use to calculate total no of cards to display with pagination. desktop is 2x3, tablet is 3x2, mobile is 3x1 (rows x columns)
+
     const card = document.querySelector('.card');
     const cardContainer = document.getElementById('project-cards');
 
