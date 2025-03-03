@@ -52,7 +52,7 @@
     --background-color: #181e29;
     --card-color: rgba(87, 84, 104, 0.397);
     /* Use opacity to show/hide section bounding boxes for debugging */
-    --debug-border: #27e285;
+    --debug-border: #27e28500;
 }
 
 /* Flexbox container */
@@ -156,9 +156,11 @@ nav span {
     font-weight: 900;
     font-size: 40px;
     border: 1px solid var(--debug-border);
-    margin: 10px 0;
+    margin: 8px 0;
     display: flex;
+    line-height: 1;
 }
+
 
 nav ul:last-child {
     width: 100%;
@@ -602,7 +604,7 @@ footer {
     /* NAVBAR DESKTOP */
     nav {
         justify-content: flex-end;
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     nav ul {
