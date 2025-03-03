@@ -1,6 +1,7 @@
 // DOM Content Load
 document.addEventListener('DOMContentLoaded', function() {
 
+    handleNavToggle();              // Close burger menu on link click
     populateCards();                // Populate project cards
     updateTimelineHeight();         // Calculate timeline height on page load
 
@@ -9,8 +10,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-function updateTimelineHeight() {
+function handleNavToggle() {
+    // Add listener to each list item, close burger menu on link click
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const navToggle = document.getElementById('nav-toggle');
 
+    // Add listener to each list item
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            navToggle.checked = false; 
+        });
+    });
+}
+
+function updateTimelineHeight() {
     //If there is more than one job, calculate distance from first to last entry. Else set to 0px
     const timeline = document.querySelector('.timeline');
     const firstJob = timeline.querySelector('.job:first-child');
