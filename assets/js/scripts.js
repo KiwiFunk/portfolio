@@ -1,22 +1,26 @@
 // DOM Content Load
 document.addEventListener('DOMContentLoaded', function() {
 
-    handleNavToggle();              // Close burger menu on link click
-    populateCards();                // Populate project cards
-    updateTimelineHeight();         // Calculate timeline height on page load
+    handleNavToggle();                  // Close burger menu on link click
+    populateCards();                    // Populate project cards
+    updateTimelineHeight();             // Calculate timeline height on page load
 
-    //Recalculate timeline length on window resize
-    window.addEventListener('resize', updateTimelineHeight);
+    //WINDOW RESIZE EVENT LISTENER
+    window.addEventListener('resize', () => {
+        updateTimelineHeight();         //Recalculate timeline length on window resize
+        calculateCardsPerPage();        //Recalculate number of cards per page on window resize
+    });
 
-    //Event listener for filters 
+    //FILTERS EVENT LISTENER
     document.getElementById('filters').addEventListener('click', (e) => {
         if (e.target.tagName === 'SPAN') {
+
             const filter = e.target.getAttribute('data-filter');
-            filterCards(filter);
             e.target.classList.toggle('selected-filter');
+
+            filterCards(filter);
         }
     });
-    
 });
 
 function handleNavToggle() {
@@ -147,4 +151,37 @@ function filterCards(filter) {
     populateCards(filteredCardObjects);
 }
 
+//Calculate the dimensions of a card
+//get width of DOM
+//Calculate how many cards are currently on screen in a row
 
+//3 means desktop mode
+//2 means tablet mode
+//1 means mobile mode
+
+//Use to calculate total no of cards to display with pagination. desktop is 2x3, tablet is 3x2, mobile is 3x1 (rows x columns)
+function calculateCardsPerPage() {
+    
+    const card = document.querySelector('.card');
+    const cardContainer = document.getElementById('project-cards');
+
+    // Get the width of the card container card
+    const cardWidth = card.offsetWidth;
+    const containerWidth = cardContainer.offsetWidth;
+
+    // Calculate the number of cards that fit in the container for a single row
+    const totalColumns = Math.floor(containerWidth / cardWidth);
+    console.log(totalColumns);
+    
+    //Return total number of cards to display per page
+    switch(totalColumns) {
+        case 3:             //Desktop view
+            return 6;
+        case 2:             //Tablet view
+            return 4;
+        case 1:             //Mobile view
+            return 3;
+        default:            //Default to desktop view
+            return 6;
+    }
+}
