@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Event listener for filters 
     document.getElementById('filters').addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON') {
+        if (e.target.tagName === 'SPAN') {
             const filter = e.target.getAttribute('data-filter');
             filterCards(filter);
             e.target.classList.toggle('selected-filter');

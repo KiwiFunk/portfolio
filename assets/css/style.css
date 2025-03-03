@@ -415,8 +415,8 @@ a {
     gap: 8px;
 }
 
-#filters button {
-    padding: 4px 8px;
+#filters span {
+    padding: 4px 10px;
     text-transform: uppercase;
     font-family: var(--body-font);
     font-size: 15px;
@@ -425,10 +425,17 @@ a {
     color: var(--text-color);
     background-color: var(--background-color);
     border: 1px solid var(--accent-color);
-    
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
 }
 
-#filters button.selected-filter {
+#filters span:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+#filters span.selected-filter {
     background-color: var(--accent-color);
     color: var(--background-color);
     border: 1px solid var(--accent-color);
