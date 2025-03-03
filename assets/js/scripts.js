@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
     //Recalculate timeline length on window resize
     window.addEventListener('resize', updateTimelineHeight);
 
+    //Event listener for filters 
+    document.getElementById('filters').addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            const filter = e.target.getAttribute('data-filter');
+            filterCards(filter);
+        }
+    });
+    
+
 });
 
 function handleNavToggle() {
@@ -44,50 +53,57 @@ const PROJECT_CARDS = [
         description: 'A product render created in Blender.',
         skills: 'Blender',
         image: 'assets/images/RG35XX.jpg',
-        link: 'https://www.artstation.com/artwork/YBmmNq'
+        link: 'https://www.artstation.com/artwork/YBmmNq',
+        catagories: ['3D']
     },
     {
         title: 'LCD-2',
         description: 'Game-ready asset recreating the Audeze LCD-2\'s.',
         skills: '3DS Max || Substance Painter || Toolbag',
         image: ['assets/images/LCD2.jpg', 'assets/images/LCD2alt.jpg'],
-        link: 'https://www.artstation.com/artwork/n0OddK'
+        link: 'https://www.artstation.com/artwork/n0OddK',
+        catagories: ['3D', 'GameDev']
     },
     {
         title: 'Raptor Rider',
         description: 'Fully rigged game-ready character and mount rendered in UE5.',
         skills: 'Maya || ZBrush || Unreal Engine',
         image: 'assets/images/CharacterDino.jpg',
-        link: 'https://www.artstation.com/artwork/lDlVPY'
+        link: 'https://www.artstation.com/artwork/lDlVPY',
+        catagories: ['3D', 'GameDev']
     },
     {
         title: 'Space Invaders',
         description: 'A collaborative hackathon project recreating Space Invaders.',
         skills: 'HTML || CSS || JavaScript || FL Studio',
         image: 'assets/images/SpaceInvaders.png',
-        link: 'https://github.com/KiwiFunk/space-invaders'
+        link: 'https://github.com/KiwiFunk/space-invaders',
+        catagories: ['Programming', 'GameDev']
     },
     {
         title: 'Snake',
         description: 'Creating Snake using PyGame as a learning project.',
         skills: 'Python || PyGame || Adobe Illustrator',
         image: 'assets/images/Snake.png',
-        link: 'https://github.com/KiwiFunk/snake-game'
+        link: 'https://github.com/KiwiFunk/snake-game',
+        catagories: ['Programming', 'GameDev']
     },
     {
         title: 'TypeRacer',
         description: 'A clone of MonkeyType created as a personal project to practice JavaScript.',
         skills: 'HTML || CSS || JavaScript',
         image: 'assets/images/TypeRacercrop.png',
-        link: 'https://github.com/KiwiFunk/type-racer'
+        link: 'https://github.com/KiwiFunk/type-racer',
+        catagories: ['Programming']
     }
 ];
 
-function populateCards() {
+function populateCards(cards = PROJECT_CARDS) {
     // Get the card container, Append a new card for every object in the array
     const CARD_CONTAINER = document.getElementById('project-cards');
+    CARD_CONTAINER.innerHTML = ''; // Clear previous cards
 
-    for (const card of PROJECT_CARDS) {
+    for (const card of cards) {
 
         let newCard = document.createElement('div');
 
@@ -111,4 +127,29 @@ function displayImages(images) {
     // Check to see if single image, or multiple images for image key
     return Array.isArray(images) ? images[0] : images;
 }
+
+let selectedFilters = [];
+
+function filterCards(filter) {
+
+    const unfilteredCardsArray = PROJECT_CARDS;
+    let filteredCardObjects = [];
+    
+    //Update selectedFilters array
+    if (selectedFilters.includes(filter)) {
+        selectedFilters = selectedFilters.filter(item => item !== filter);
+    }
+    else {
+        selectedFilters.push(filter);
+    }
+
+    //Populate filteredCardObjects array with cards that match all selected filters
+    filteredCardObjects = unfilteredCardsArray.filter(card => {
+        return selectedFilters.every(filter => card.catagories.includes(filter));
+    });
+    
+    //Run populateCards function with the filtered array as an argument
+    populateCards(filteredCardObjects);
+}
+
 
