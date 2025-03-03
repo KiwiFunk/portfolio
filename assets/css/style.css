@@ -521,6 +521,49 @@ a {
     padding: 10px 16px;
 }
 
+/* PAGINATION CLASSES */
+
+/* Pagination Controls */
+#pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--body-font);
+    font-weight: 600;
+    user-select: none;
+    transition: all 0.2s ease;
+    width: 40px;
+    text-align: center;
+}
+
+.pagination-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: var(--card-color);
+}
+
+.pagination-btn:not(.disabled):active {
+    transform: scale(0.95);
+}
+
+#page-info {
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 80px;
+    text-align: center;
+}
+
 /* CONTACT FORM */
 #contactform {
     border: var(--debug-border) 1px solid;

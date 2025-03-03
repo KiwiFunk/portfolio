@@ -55,7 +55,10 @@ const PROJECT_CARDS = [
 document.addEventListener('DOMContentLoaded', function() {
 
     handleNavToggle();                  // Close burger menu on link click
-    populateCards();                    // Populate project cards
+
+    populateCards();                    // Populate project cards (We need to add cards in order to perform calculations)
+    calculateCardsPerPage();            // Calculate number of cards per page
+
     updateTimelineHeight();             // Calculate timeline height on page load
 
     //WINDOW RESIZE EVENT LISTENER
@@ -76,17 +79,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //PAGINATION EVENT LISTENERS
-    document.getElementById('prev-page').addEventListener('click', () => {
-        if (currentPage > 1) {
+    document.getElementById('prev-page').addEventListener('click', function() {
+        if (!this.classList.contains('disabled') && currentPage > 1) {
             currentPage--;
             populateCards();
+            updatePaginationButtons()
         }
     });
     
-    document.getElementById('next-page').addEventListener('click', () => {
-        if (currentPage < totalPages) {
+    document.getElementById('next-page').addEventListener('click', function() {
+        if (!this.classList.contains('disabled') && currentPage < totalPages) {
             currentPage++;
             populateCards();
+            updatePaginationButtons()
         }
     });
 
@@ -113,9 +118,9 @@ function updatePaginationButtons() {
     const prevButton = document.getElementById('prev-page');
     const nextButton = document.getElementById('next-page');
 
-    // Enable/Disable buttons based on currentPage
-    prevButton.disabled = currentPage === 1;
-    nextButton.disabled = currentPage === totalPages;
+    // Add/remove disabled class instead of disabled attribute
+    prevButton.classList.toggle('disabled', currentPage === 1);
+    nextButton.classList.toggle('disabled', currentPage === totalPages);
 }
 
 function populateCards() {
