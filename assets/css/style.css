@@ -50,7 +50,7 @@
     --accent-color: #28e788;
     --text-color: #ececec;
     --background-color: #181e29;
-    --debug-border: #27e28500;
+    --debug-border: #27e285;
     --card-color: rgba(87, 84, 104, 0.397);
 }
 
@@ -133,8 +133,8 @@ h3 {
 
 /* MAIN */
 header {
-    margin-bottom: 20px;
-    gap: 5px 20px !important;
+    margin-bottom: 24px;
+    gap: 10px 20px !important;
 }
 
 /* NAVBAR */
@@ -175,7 +175,7 @@ nav a {
 #hero {
     border: var(--debug-border) 1px solid;
     width: 100%;
-    min-height: 24vh;
+    min-height: 26vh;
     flex-grow: 2;
     text-align: center;
 
