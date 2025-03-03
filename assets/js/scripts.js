@@ -83,17 +83,48 @@ let cardsPerPage = 6;   //Default Value (We need to popualate cards for calculat
 let filteredCards = PROJECT_CARDS;
 
 //PAGINATION FUNCTIONS
-function calculateTotalPages() {
+function calcTotalPages() {
     //Calculate total pages based on number of cards and cards per page
     totalPages = Math.ceil(filteredCards.length / cardsPerPage);
     //updatePaginationButtons();
 }
 
+function populateCards() {
+    // Get the card container, Append a new card for every object in the array
+
+    const CARD_CONTAINER = document.getElementById('project-cards');
+    CARD_CONTAINER.innerHTML = '';                  // Clear previous cards
+
+    // Calculate which cards to display based on current page
+    const startIdx = (currentPage - 1) * cardsPerPage;
+    const endIdx = startIdx + cardsPerPage;
+    const cardsToDisplay = filteredCards.slice(startIdx, endIdx);
+
+    for (const card of cardsToDisplay) {
+
+        let newCard = document.createElement('div');
+
+        newCard.classList.add('card');
+        newCard.innerHTML = `
+            <a href="${card.link}" target="_blank" rel="noopener noreferrer" aria-label="${card.title} project (opens in new tab)">
+                <img src="${displayImages(card.image)}" alt="${card.title}">
+                <div class="card-content">
+                    <h3>${card.title}</h3>
+                    <p>${card.description}</p>
+                </div>
+                <hr>
+                <span class="card-skills">${card.skills}</span>
+            </a>
+        `;
+        CARD_CONTAINER.appendChild(newCard);
+    }
+};
 
 
-
-
-
+function displayImages(images) {
+    // Check to see if single image, or multiple images for image key. Planned to expand to multiple images per card.
+    return Array.isArray(images) ? images[0] : images;
+}
 
 function handleNavToggle() {
     // Add listener to each list item, close burger menu on link click
@@ -121,36 +152,6 @@ function updateTimelineHeight() {
     else {
         timeline.style.setProperty('--timeline-height', '0px');
     }
-}
-
-function populateCards(cards = PROJECT_CARDS) {
-    // Get the card container, Append a new card for every object in the array
-    const CARD_CONTAINER = document.getElementById('project-cards');
-    CARD_CONTAINER.innerHTML = ''; // Clear previous cards
-
-    for (const card of cards) {
-
-        let newCard = document.createElement('div');
-
-        newCard.classList.add('card');
-        newCard.innerHTML = `
-            <a href="${card.link}" target="_blank" rel="noopener noreferrer" aria-label="${card.title} project (opens in new tab)">
-                <img src="${displayImages(card.image)}" alt="${card.title}">
-                <div class="card-content">
-                    <h3>${card.title}</h3>
-                    <p>${card.description}</p>
-                </div>
-                <hr>
-                <span class="card-skills">${card.skills}</span>
-            </a>
-        `;
-        CARD_CONTAINER.appendChild(newCard);
-    }
-};
-
-function displayImages(images) {
-    // Check to see if single image, or multiple images for image key. Planned to expand to multiple images per card.
-    return Array.isArray(images) ? images[0] : images;
 }
 
 let selectedFilters = [];
