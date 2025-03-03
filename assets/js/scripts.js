@@ -74,6 +74,22 @@ document.addEventListener('DOMContentLoaded', function() {
             filterCards(filter);
         }
     });
+
+    //PAGINATION EVENT LISTENERS
+    document.getElementById('prev-page').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            populateCards();
+        }
+    });
+    
+    document.getElementById('next-page').addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            populateCards();
+        }
+    });
+
 });
 
 //GLOBAL VARIABLES
@@ -86,7 +102,19 @@ let filteredCards = PROJECT_CARDS;
 function calcTotalPages() {
     //Calculate total pages based on number of cards and cards per page
     totalPages = Math.ceil(filteredCards.length / cardsPerPage);
-    //updatePaginationButtons();
+    updatePaginationButtons();
+}
+
+function updatePaginationButtons() {
+    const pageInfo = document.getElementById('page-info');
+    pageInfo.textContent = `${currentPage} of ${totalPages}`;
+
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+
+    // Enable/Disable buttons based on currentPage
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
 }
 
 function populateCards() {
