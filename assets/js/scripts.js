@@ -16,9 +16,34 @@ async function fetchProjectData() {
         const data = await response.json();
         PROJECT_CARDS = data;
         filteredCards = data;
+
+        // Preload images
+        await preloadImages(PROJECT_CARDS);
+
     } catch (error) {
         console.error('Error loading project data:', error);
     }
+}
+
+//PRELOADING CONTENT
+function preloadImages(cards) {
+    const imagePromises = cards.map(card => {
+        // If there is only a single image, convert it to an array for consistency
+        const images = Array.isArray(card.image) ? card.image : [card.image];
+
+        // Create an image loading promise for each image
+        return images.map(imageSrc => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = imageSrc;         // Set image source
+                img.onload = resolve;       // Resolve when image is loaded
+                img.onerror = reject;       // Reject if there's an error loading
+            });
+        });
+    });
+
+    // Flatten the array of promises (since we have multiple images per card)
+    return Promise.all(imagePromises.flat());
 }
 
 //DOM CONTENT LOADED - must be async to wait for fetchProjectData to complete
