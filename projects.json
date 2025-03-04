@@ -46,5 +46,29 @@
         "image": "assets/images/TypeRacercrop.png",
         "link": "https://github.com/KiwiFunk/type-racer",
         "categories": ["Programming"]
+    },
+    {
+        "title": "Arcade Cab",
+        "description": "Recreation of an arcade machine from Cyberpunk 2077.",
+        "skills": "3DS Max || Substance Painter || Marmoset Toolbag",
+        "image": "assets/images/arcade-cab.jpg",
+        "link": "https://www.artstation.com/artwork/JvWEwm",
+        "categories": ["3D", "GameDev"]
+    },
+    {
+        "title": "Robot Character",
+        "description": "A lowpoly robot character created for a game project.",
+        "skills": "Blender || Substance Painter || Unreal Engine",
+        "image": "assets/images/Robot.png",
+        "link": "https://www.artstation.com/artwork/1NLY5q",
+        "categories": ["3D", "GameDev"]
+    },
+    {
+        "title": "Brick Material",
+        "description": "Procedural brick material created in Substance Designer.",
+        "skills": "Substance Designer || Marmoset Toolbag",
+        "image": "assets/images/brick-mat.jpg",
+        "link": "https://www.artstation.com/artwork/vDx1gv",
+        "categories": ["3D", "GameDev"]
     }
 ]
