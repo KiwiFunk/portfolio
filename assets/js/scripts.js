@@ -224,7 +224,7 @@ function calculateCardsPerPage() {
     //Return total number of cards to display per page
     switch(totalColumns) {
         case 3:             //Desktop view
-            cardsPerPage = 3;
+            cardsPerPage = 6;
             break;
         case 2:             //Tablet view
             cardsPerPage = 4;
