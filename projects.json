@@ -40,19 +40,27 @@
         "categories": ["Programming", "GameDev"]
     },
     {
+        "title": "Verdant App",
+        "description": "A React webapp for tracking plant care.",
+        "skills": "React || Node.js || Full-Stack",
+        "image": "assets/images/VerdantApp.png",
+        "link": "https://github.com/KiwiFunk/verdant-app",
+        "categories": ["Programming"]
+    },
+    {
+        "title": "Django Blog",
+        "description": "A basic blog built using the Django Framework and Cloudinary as a CDN.",
+        "skills": "Django || Full-Stack || CDN",
+        "image": "assets/images/DjangoBlog.png",
+        "link": "https://django-assignment-app-fd1cd79d0e6d.herokuapp.com",
+        "categories": ["Programming"]
+    },
+    {
         "title": "TypeRacer",
         "description": "A clone of MonkeyType created as a personal project to practice JavaScript.",
         "skills": "HTML || CSS || JavaScript",
         "image": "assets/images/TypeRacercrop.png",
         "link": "https://github.com/KiwiFunk/type-racer",
-        "categories": ["Programming"]
-    },
-    {
-        "title": "Verdant App",
-        "description": "A React webapp for tracking plant care.",
-        "skills": "React || Node.js || MongoDB",
-        "image": "assets/images/VerdantApp.png",
-        "link": "https://github.com/KiwiFunk/verdant-app",
         "categories": ["Programming"]
     },
     {
