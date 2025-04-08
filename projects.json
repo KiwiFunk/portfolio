@@ -48,6 +48,14 @@
         "categories": ["Programming"]
     },
     {
+        "title": "Verdant App",
+        "description": "A React webapp for tracking plant care.",
+        "skills": "React || Node.js || MongoDB",
+        "image": "assets/images/VerdantApp.png",
+        "link": "https://github.com/KiwiFunk/verdant-app",
+        "categories": ["Programming"]
+    },
+    {
         "title": "Arcade Cab",
         "description": "Recreation of an arcade machine from Cyberpunk 2077.",
         "skills": "3DS Max || Substance Painter || Marmoset Toolbag",

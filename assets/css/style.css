@@ -282,7 +282,8 @@ nav a {
 }
 
 .linkbutton {
-    background-color: var(--card-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--accent-color);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
     width: 90%;        
     padding: 12px 20px;
@@ -296,7 +297,7 @@ nav a {
 .linkbutton span {
     font-family: 'Gotham', sans-serif;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
 }
 
@@ -730,7 +731,6 @@ footer {
 
     /* Social Media Buttons */
     .linkbutton {
-        background-color: rgba(87, 84, 104, 0.397);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
         aspect-ratio: 1 / 1;    /* This keeps the aspect ratio 1:1 */
         padding: 1px;
@@ -749,6 +749,7 @@ footer {
         display: none;
     }
 
+    /*
     #git.linkbutton:hover {
         background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
         background-size: 800%;
@@ -771,6 +772,13 @@ footer {
         max-width: 6em;
     }
 
+    */
+
+    .linkbutton:hover {
+        background-color: var(--accent-color);
+        transition: all 0.4s ease;
+    }
+
     .linkbutton svg {
         margin-right: 0;
         fill: white;
@@ -780,6 +788,7 @@ footer {
     .linkbutton:hover svg {
         fill: white;
     }
+    
 
 }
 
