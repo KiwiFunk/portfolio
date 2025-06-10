@@ -1,5 +1,21 @@
 [
     {
+        "title": "LaraList",
+        "description": "A product render created in Blender.",
+        "skills": "Laravel || Alpine.js || Tailwind CSS || PHP",
+        "image": "assets/images/LaraList.png",
+        "link": "https://laralist.vercel.app/",
+        "categories": ["Programming"]
+    },
+    {
+        "title": "Resume Builder",
+        "description": "A product render created in Blender.",
+        "skills": "Next.js || React || Tailwind CSS || JavaScript",
+        "image": "assets/images/ResumeBuilder.png",
+        "link": "https://resume-builder-azure-rho.vercel.app/",
+        "categories": ["Programming"]
+    },
+    {
         "title": "RG35XX+",
         "description": "A product render created in Blender.",
         "skills": "Blender",
@@ -32,6 +48,14 @@
         "categories": ["Programming", "GameDev"]
     },
     {
+        "title": "Django Blog",
+        "description": "A basic blog built using the Django Framework and Cloudinary as a CDN.",
+        "skills": "Django || Full-Stack || CDN",
+        "image": "assets/images/DjangoBlog.png",
+        "link": "https://django-assignment-app-fd1cd79d0e6d.herokuapp.com",
+        "categories": ["Programming"]
+    },
+    {
         "title": "Snake",
         "description": "Creating Snake using PyGame as a learning project.",
         "skills": "Python || PyGame || Adobe Illustrator",
@@ -45,14 +69,6 @@
         "skills": "React || Node.js || Full-Stack",
         "image": "assets/images/VerdantApp.png",
         "link": "https://github.com/KiwiFunk/verdant-app",
-        "categories": ["Programming"]
-    },
-    {
-        "title": "Django Blog",
-        "description": "A basic blog built using the Django Framework and Cloudinary as a CDN.",
-        "skills": "Django || Full-Stack || CDN",
-        "image": "assets/images/DjangoBlog.png",
-        "link": "https://django-assignment-app-fd1cd79d0e6d.herokuapp.com",
         "categories": ["Programming"]
     },
     {
