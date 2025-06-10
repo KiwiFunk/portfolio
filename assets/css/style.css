@@ -299,6 +299,7 @@ nav a {
     align-items: center;
     gap: 3.8vw;
     min-height: 98px;
+    margin-bottom: 10px;
 }
 
 .linkbutton {
