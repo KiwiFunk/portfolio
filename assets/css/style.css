@@ -141,7 +141,7 @@ h3 {
 /* MAIN */
 header {
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
     gap: 10px 20px !important;
     min-height: 200px;
     /* Ensure content stays above background */
@@ -235,6 +235,7 @@ nav a {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 /* @KIWIFUNK */
@@ -293,7 +294,7 @@ nav a {
 
     display: flex;
     flex-flow: row wrap;
-    padding: 2rem 0.95rem;
+    padding: 1rem 0.95rem;
     justify-content: center;
     align-items: center;
     gap: 3.8vw;
@@ -311,9 +312,9 @@ nav a {
     display: flex; 
     align-items: center;
     border-radius: 18px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     overflow: hidden;
+    transition: all 0.5s ease;
 }
 
 .linkbutton span {
@@ -422,7 +423,7 @@ a {
     background: rgba(40, 231, 136, 0.15);
     color: var(--accent-color);
     margin: 5px 3px !important;
-    padding: 8px 14px;
+    padding: 7px 14px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
@@ -757,8 +758,9 @@ a {
     padding: 10px;
     margin: 5px 0;
     border-radius: 10px;
-    border: 1px solid #00000000;
-    background-color: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     font-size: 16px;
 
     /* User Text */
@@ -789,19 +791,21 @@ a {
 }
 
 #contactform button {
-    padding: 10px 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    border: 1px solid #00000000;
+    padding: 16px 40px;
+    margin: 20px 0 0 0;
+    border-radius: 25px;
+    border: 1px solid rgba(40, 231, 136, 0.3);
     background-color: var(--accent-color);
-    color: var(--background-color);
     font-size: 16px;
     font-family: var(--body-font);
-    font-weight: 900;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
 }
 
 #contactform button:active {
@@ -876,6 +880,10 @@ footer {
         min-height: 26vh;
     }
 
+    #socials {
+        padding: 2.5rem 0.95rem;
+    }
+
     /* Social Media Buttons */
     .linkbutton {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
@@ -923,7 +931,8 @@ footer {
 
     .linkbutton:hover {
         background-color: var(--accent-color);
-        transition: all 0.4s ease;
+        transition: all 0.5s ease;
+        transform: scale(1.05);
     }
 
     .linkbutton svg {
@@ -958,21 +967,5 @@ footer {
     /* Social Buttons */
     .linkbutton {
         max-width: 6em;
-    }
-
-    #git.linkbutton:hover {
-        max-width: 6.7em;
-    }
-
-    #linkedin.linkbutton:hover {
-        max-width: 6.7em;
-    }
-
-    #artstation.linkbutton:hover {
-        max-width: 6.7em;
-    }
-
-    #project-cards {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
