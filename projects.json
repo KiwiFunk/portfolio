@@ -1,7 +1,7 @@
 [
     {
         "title": "LaraList",
-        "description": "A product render created in Blender.",
+        "description": "Manage your tasks with this simple Laravel based task manager.",
         "skills": "Laravel || Alpine.js || Tailwind CSS || PHP",
         "image": "assets/images/LaraList.png",
         "link": "https://laralist.vercel.app/",
@@ -9,7 +9,7 @@
     },
     {
         "title": "Resume Builder",
-        "description": "A product render created in Blender.",
+        "description": "Effortlessly create a professional resume with this Next.js application.",
         "skills": "Next.js || React || Tailwind CSS || JavaScript",
         "image": "assets/images/ResumeBuilder.png",
         "link": "https://resume-builder-azure-rho.vercel.app/",

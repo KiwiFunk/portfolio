@@ -574,6 +574,7 @@ a {
 #contactform {
     border: var(--debug-border) 1px solid;
     flex-grow: 2;
+    margin-top: 50px;
 }
 
 #contactform form {
@@ -715,18 +716,6 @@ footer {
     /* HERO */
     #hero {
         min-height: 26vh;
-    }
-
-   
-    /* Card Hover Features */
-    .card img {
-    filter: grayscale(01) brightness(0.8) contrast(0.8); 
-    transition: filter 0.3s ease;
-    }
-
-    .card:hover img {
-        /* Remove filters on hover for full color */
-        filter: none;
     }
 
     /* Social Media Buttons */
