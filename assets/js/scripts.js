@@ -131,12 +131,23 @@ function populateCards() {
     );
 
     cardsToDisplay.forEach(projectData => {
-        // Create new ProjectCard component
-        const projectCard = new ProjectCard(projectData);
-        const cardElement = projectCard.create();
-        
-        // Append to container
-        CARD_CONTAINER.appendChild(cardElement);
+        try {
+            // Create new ProjectCard component
+            const projectCard = new ProjectCard(projectData);
+            const cardElement = projectCard.create();
+            CARD_CONTAINER.appendChild(cardElement);
+        } catch (error) {
+            console.error('Error creating ProjectCard:', error);
+            
+            // Fallback: create a simple card
+            const fallbackCard = document.createElement('div');
+            fallbackCard.className = 'project-card';
+            fallbackCard.innerHTML = `
+                <h3>${projectData.title}</h3>
+                <p>${projectData.description}</p>
+            `;
+            CARD_CONTAINER.appendChild(fallbackCard);
+        }
     });
 }
 
