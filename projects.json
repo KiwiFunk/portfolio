@@ -2,17 +2,19 @@
     {
         "title": "LaraList",
         "description": "Manage your tasks with this simple Laravel based task manager.",
-        "skills": "Laravel || Alpine.js || Tailwind CSS || PHP",
+        "skills": "Laravel || Alpine.js || Tailwind || PHP",
         "image": "assets/images/LaraList.png",
         "link": "https://laralist.vercel.app/",
+        "github": "https://github.com/KiwiFunk/laralist",
         "categories": ["Programming"]
     },
     {
         "title": "Resume Builder",
         "description": "Effortlessly create a professional resume with this Next.js application.",
-        "skills": "Next.js || React || Tailwind CSS || JavaScript",
+        "skills": "Next.js || React || Tailwind || JavaScript",
         "image": "assets/images/ResumeBuilder.png",
         "link": "https://resume-builder-azure-rho.vercel.app/",
+        "github": "https://github.com/KiwiFunk/resume-builder",
         "categories": ["Programming"]
     },
     {
@@ -45,6 +47,7 @@
         "skills": "HTML || CSS || JavaScript || FL Studio",
         "image": "assets/images/SpaceInvaders.png",
         "link": "https://github.com/KiwiFunk/space-invaders",
+        "github": "https://github.com/KiwiFunk/space-invaders",
         "categories": ["Programming", "GameDev"]
     },
     {
@@ -53,6 +56,7 @@
         "skills": "Django || Full-Stack || CDN",
         "image": "assets/images/DjangoBlog.png",
         "link": "https://django-assignment-app-fd1cd79d0e6d.herokuapp.com",
+        "github": "https://github.com/KiwiFunk/django-blog",
         "categories": ["Programming"]
     },
     {
@@ -77,6 +81,7 @@
         "skills": "HTML || CSS || JavaScript",
         "image": "assets/images/TypeRacercrop.png",
         "link": "https://github.com/KiwiFunk/type-racer",
+        "github": "https://github.com/KiwiFunk/type-racer",
         "categories": ["Programming"]
     },
     {

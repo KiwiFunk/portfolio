@@ -122,39 +122,22 @@ function updatePaginationButtons() {
 }
 
 function populateCards() {
-    // Get the card container, Append a new card for every object in the array
+    const CARD_CONTAINER = document.getElementById('project-cards');
+    CARD_CONTAINER.innerHTML = '';
 
-    const CARD_CONTAINER = document.getElementById('project-cards');    //Get the card container
-    CARD_CONTAINER.innerHTML = '';                                      //Clear the container before populating
+    const cardsToDisplay = filteredCards.slice(
+        (currentPage - 1) * cardsPerPage, 
+        currentPage * cardsPerPage
+    );
 
-    // Calculate which cards to display based on current page
-    const startIdx = (currentPage - 1) * cardsPerPage;                  //Page 1 = 0*6 which starts with index zero, page 2 = 1*6 which starts with index 6
-    const endIdx = startIdx + cardsPerPage;
-    const cardsToDisplay = filteredCards.slice(startIdx, endIdx);       //Slice the filtered array based on start and end index
-
-    for (const card of cardsToDisplay) {                                //Loop through the slice 
-
-        let newCard = document.createElement('div');                    //Create a new card
-
-        newCard.classList.add('card');
-        newCard.innerHTML = `
-            <a href="${card.link}" target="_blank" rel="noopener noreferrer" aria-label="${card.title} project (opens in new tab)">
-                <img src="${displayImages(card.image)}" alt="${card.title}">
-                <div class="card-content">
-                    <h3>${card.title}</h3>
-                    <p>${card.description}</p>
-                </div>
-                <hr>
-                <span class="card-skills">${card.skills}</span>
-            </a>
-        `;
-        CARD_CONTAINER.appendChild(newCard);                            //Append the new card to the container
-    }
-};
-
-function displayImages(images) {
-    // Check to see if single image, or multiple images for image key. Planned to expand to multiple images per card.
-    return Array.isArray(images) ? images[0] : images;
+    cardsToDisplay.forEach(projectData => {
+        // Create new ProjectCard component
+        const projectCard = new ProjectCard(projectData);
+        const cardElement = projectCard.create();
+        
+        // Append to container
+        CARD_CONTAINER.appendChild(cardElement);
+    });
 }
 
 function handleNavToggle() {
@@ -204,7 +187,7 @@ function filterCards(filter) {
 function calculateCardsPerPage() {
     //Use to calculate total no of cards to display with pagination. desktop is 2x3, tablet is 3x2, mobile is 3x1 (rows x columns)
 
-    const card = document.querySelector('.card');
+    const card = document.querySelector('.project-card');
     const cardContainer = document.getElementById('project-cards');
 
     // If there's no cards in the DOM, we can't calculate
