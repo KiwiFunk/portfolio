@@ -229,6 +229,7 @@ nav a {
     line-height: 45px;
     font-family: monospace;
     border-right: 2px solid;
+    color: rgba(184, 184, 184, 0.8);
 
 
     width: 220px;
@@ -397,14 +398,18 @@ a {
 
 .tag {
     display: inline-block; 
-    background-color: var(--accent-color);
-    color: var(--background-color);
-    margin: 5px 2px !important;
-    padding: 2.5px 6px;
-    border-radius: 6px;
+    background: rgba(40, 231, 136, 0.15);
+    color: var(--accent-color);
+    margin: 5px 3px !important;
+    padding: 8px 14px;
+    border-radius: 20px;
     font-size: 12px;
-    font-weight: 900;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(40, 231, 136, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 /* PROJECT FILTERING */
