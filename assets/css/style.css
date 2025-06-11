@@ -490,7 +490,6 @@ a {
 
 .project-card {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
@@ -499,6 +498,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 100%; /* This ensures uniform height */
+    backdrop-filter: blur(10px) !important;
 }
 
 .project-card:hover {
@@ -561,6 +561,9 @@ a {
     text-decoration: none;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .primary-btn {
@@ -574,12 +577,12 @@ a {
 }
 
 .secondary-btn {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     color: #f0f0f0;
 }
 
 .secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
 }
 
@@ -907,31 +910,6 @@ footer {
     .linkbutton span {
         display: none;
     }
-
-    /*
-    #git.linkbutton:hover {
-        background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
-        background-size: 800%;
-        fill: white;
-        animation: animate-gradient 9s linear infinite;
-        max-width: 6em;
-    }
-    #linkedin.linkbutton:hover {
-        background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
-        background-size: 800%;
-        fill: white;
-        animation: animate-gradient 9s linear infinite;
-        max-width: 6em;
-    }
-    #artstation:hover {
-        background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
-        background-size: 800%;
-        fill: white;
-        animation: animate-gradient 9s linear infinite;
-        max-width: 6em;
-    }
-
-    */
 
     .linkbutton:hover {
         background-color: var(--accent-color);
