@@ -345,133 +345,65 @@ a {
 /* EXPERIENCE */
 
 #work-experience {
-    width: 100%;
+    border: var(--debug-border) 1px solid;
+    width: 100px;
+    min-height: 100px;
+    flex-grow: 1;
+    min-width: 300px;
 }
 
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 30px;
+#work-experience .skills-used {
+    color: var(--accent-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#work-experience p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+#work-experience .subheading {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 12px 0;
 }
 
 .job {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    margin: 24px 0;
     position: relative;
-    overflow: hidden;
 }
 
-.job:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    border-color: rgba(40, 231, 136, 0.3);
-}
-
-.job h3 {
-    color: var(--accent-color);
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0 0 15px 0;
-    background: linear-gradient(135deg, #28e788, #27e285);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.subheading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 20px 0;
-    font-weight: 600;
-    color: rgba(240, 240, 240, 0.8);
-    font-size: 16px;
-}
-
-.subheading span:first-child {
-    font-weight: 700;
-    color: var(--text-color);
-}
-
-.subheading span:last-child {
-    background: rgba(40, 231, 136, 0.2);
-    color: var(--accent-color);
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: 600;
-    border: 1px solid rgba(40, 231, 136, 0.3);
-}
-
-/* Enhanced bullet points */
-.job > p:not(.subheading):not(.skills-used) {
-    margin: 0 0 25px 0;
-    line-height: 1.7;
-    color: rgba(240, 240, 240, 0.9);
-}
-
-/* Convert bullet points to styled achievements */
-.achievement-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 25px 0;
-}
-
-.achievement-list li {
+/* Timeline */
+.timeline {
     position: relative;
-    padding: 8px 0 8px 30px;
-    margin-bottom: 12px;
-    line-height: 1.6;
-    color: rgba(240, 240, 240, 0.9);
+    padding-left: 60px;
 }
 
-.achievement-list li::before {
-    content: '▶';
+/* Vertical line */
+.timeline::before {
+    content: '';
     position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-    font-size: 12px;
+    left: 30px;                         /*Half of the timeline padding */
+    top: 8px;   
+    height: var(--timeline-height);     /* Calculated from DOM and set using updateTimelineHeight() function */
+    width: 2px;
+    background-color: var(--accent-color);
 }
 
-.achievement-list li:hover {
-    color: var(--text-color);
-    transform: translateX(5px);
-    transition: all 0.2s ease;
+/* Timeline dots */
+.job::before {
+    content: '';
+    position: absolute;
+    top: 8px;                   /* Align with h3 */
+    left: -37px;                /* Half of the timeline padding + half of dot diameter - half of line width */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    z-index: 1;                 /* Keep dots above line */
 }
 
-/* Enhanced skills styling */
-.skills-used {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 20px 0 0 0;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.skill-chip {
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(240, 240, 240, 0.9);
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.skill-chip:hover {
-    background: rgba(40, 231, 136, 0.2);
-    color: var(--accent-color);
-    border-color: rgba(40, 231, 136, 0.3);
-    transform: translateY(-2px);
-}
 /* SKILLS */
 
 #skills {
