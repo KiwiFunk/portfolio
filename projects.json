@@ -42,15 +42,6 @@
         "categories": ["3D", "GameDev"]
     },
     {
-        "title": "Space Invaders",
-        "description": "A collaborative hackathon project recreating Space Invaders.",
-        "skills": "HTML || CSS || JavaScript || FL Studio",
-        "image": "assets/images/SpaceInvaders.png",
-        "link": "https://github.com/KiwiFunk/space-invaders",
-        "github": "https://github.com/KiwiFunk/space-invaders",
-        "categories": ["Programming", "GameDev"]
-    },
-    {
         "title": "Django Blog",
         "description": "A basic blog built using the Django Framework and Cloudinary as a CDN.",
         "skills": "Django || Full-Stack || CDN",
@@ -58,6 +49,15 @@
         "link": "https://django-assignment-app-fd1cd79d0e6d.herokuapp.com",
         "github": "https://github.com/KiwiFunk/django-blog",
         "categories": ["Programming"]
+    },
+    {
+        "title": "Space Invaders",
+        "description": "A collaborative hackathon project recreating Space Invaders.",
+        "skills": "HTML || CSS || JavaScript || FL Studio",
+        "image": "assets/images/SpaceInvaders.png",
+        "link": "https://github.com/KiwiFunk/space-invaders",
+        "github": "https://github.com/KiwiFunk/space-invaders",
+        "categories": ["Programming", "GameDev"]
     },
     {
         "title": "Snake",
