@@ -227,7 +227,7 @@ function calculateCardsPerPage() {
             cardsPerPage = 3;
             break;
         default:            //Default to desktop view
-            cardsPerPage = 6;
+            cardsPerPage = 4;
             break;
     }
 
