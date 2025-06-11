@@ -560,7 +560,6 @@ a {
     font-size: 14px;
     text-decoration: none;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -651,6 +650,7 @@ a {
     color: #f0f0f0;
     transform: translateY(-1px);
 }
+
 
 /* Mobile-specific action buttons */
 .mobile-actions {
