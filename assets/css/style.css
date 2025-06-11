@@ -498,7 +498,6 @@ a {
     display: flex;
     flex-direction: column;
     height: 100%; /* This ensures uniform height */
-    backdrop-filter: blur(10px) !important;
 }
 
 .project-card:hover {
