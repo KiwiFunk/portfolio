@@ -68,14 +68,6 @@
         "categories": ["Programming", "GameDev"]
     },
     {
-        "title": "Verdant App",
-        "description": "A React webapp for tracking plant care.",
-        "skills": "React || Node.js || Full-Stack",
-        "image": "assets/images/VerdantApp.png",
-        "link": "https://github.com/KiwiFunk/verdant-app",
-        "categories": ["Programming"]
-    },
-    {
         "title": "TypeRacer",
         "description": "A clone of MonkeyType created as a personal project to practice JavaScript.",
         "skills": "HTML || CSS || JavaScript",
@@ -107,5 +99,13 @@
         "image": "assets/images/brick-mat.jpg",
         "link": "https://www.artstation.com/artwork/vDx1gv",
         "categories": ["3D", "GameDev"]
+    },
+    {
+        "title": "Verdant App",
+        "description": "A React webapp for tracking plant care.",
+        "skills": "React || Node.js || Full-Stack",
+        "image": "assets/images/VerdantApp.png",
+        "link": "https://github.com/KiwiFunk/verdant-app",
+        "categories": ["Programming"]
     }
 ]
