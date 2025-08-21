@@ -980,7 +980,7 @@ footer {
         max-width: 5.5em;         /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
         min-width: 4em;
         border-radius: 30%;
-        transition: max-width 0.3s ease-out;
+        transition: all 0.3s ease;
     }
 
     .linkbutton span {
