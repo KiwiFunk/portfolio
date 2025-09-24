@@ -425,11 +425,11 @@ a {
 #work-experience .subheading {
     font-size: 14px;
     font-weight: 800;
-    margin: 12px 0;
+    margin: 8px 0;
 }
 
 .job {
-    margin: 24px 0;
+    margin: 30px 0;
     position: relative;
 }
 
@@ -849,7 +849,7 @@ a {
 
 #contactform textarea {
     resize: vertical;
-    min-height: 160px;
+    min-height: 220px;
     font-size: 16px;
 }
 
@@ -896,7 +896,7 @@ a {
 /* FOOTER */
 footer {
     border: var(--debug-border) 1px solid;
-    margin-top: 160px;
+    margin-top: 280px;
     font-size: 12px;
     font-weight: 600;
     padding: 10px;
@@ -1006,7 +1006,10 @@ footer {
     #page-info {
         order: 0;
     }
-    
+
+    footer {
+        margin-top: 400px;
+    }
 
 }
 

@@ -4,6 +4,8 @@
 
 A static site for linking to my social media platforms such as GitHub and ArtStation, and providing an overview of experience, skills, and linking to recent projects.
 
+Sections like projects are populated from data contained within a JSON file making it easy to add new entries. On a site of a bigger scale this could be expanded to pull from a database - but given the low traffic and infrequent updates, it's simply easier to do this from a local file.
+
 ### Testing
 ![Documentation Image](docs/lighthouse.png)
 
