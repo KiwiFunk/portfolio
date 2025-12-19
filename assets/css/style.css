@@ -43,16 +43,29 @@
 
 :root {
 
+    /* Default Dark Theme */
     --heading-font: 'Gotham', Verdana, sans-serif;
     --body-font: "Nunito Sans", Arial, sans-serif;
-    --primary-color: #EC2F5A;
-    --secondary-color: #CA864D;
-    --accent-color: #28e788;
-    --text-color: #ececec;
-    --background-color: #181e29;
-    --card-color: rgba(87, 84, 104, 0.397);
+    --primary-color: #38bdf8;
+    --secondary-color: #818cf8;
+    --accent-color: #2dd4bf;
+    
+    --text-color: #e2e8f0;
+    --background-color: #0f172a;
     /* Use opacity to show/hide section bounding boxes for debugging */
     --debug-border: #27e28500;
+}
+
+/* Light Mode Overrides */
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-color: #0284c7;        
+        --secondary-color: #4f46e5;      
+        --accent-color: #0d9488;         
+
+        --text-color: #334155;
+        --background-color: #ffffff;
+    }
 }
 
 /* Flexbox container */
@@ -923,6 +936,7 @@ footer {
 
 /* Media Queries */
 
+/* Disable hover effects on touch devices */
 @media (hover: none) {
     #filters span:hover {
         transform: none;
