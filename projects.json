@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apollo",
+        "description": "A Markdown based note-taking app built with Astro and Preact.",
+        "skills": "Astro || Preact || Tailwind || PostgreSQL",
+        "image": "assets/images/Apollo.png",
+        "link": "https://apollo.kiwifunk.com/",
+        "github": "https://github.com/KiwiFunk/apollo",
+        "categories": ["Programming"]
+    },
+    {
+        "title": "CrossyClone",
+        "description": "A Crossy Road clone built using Three.js.",
+        "skills": "Three.js || JavaScript || Vite || Blender",
+        "image": "assets/images/CrossyClone.png",
+        "link": "https://kiwifunk.github.io/crossy-clone/",
+        "github": "https://github.com/KiwiFunk/crossy-clone",
+        "categories": ["Programming", "3D", "GameDev"]
+    },
+    {
         "title": "LaraList",
         "description": "Manage your tasks with this simple Laravel based task manager.",
         "skills": "Laravel || Alpine.js || Tailwind || PHP",
