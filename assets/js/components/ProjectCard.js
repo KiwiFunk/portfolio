@@ -105,13 +105,59 @@ class ProjectCard {
         return Array.isArray(this.project.image) ? this.project.image[0] : this.project.image;
     }
 
-    // Add interactive behaviors
+    // Event Listeners for hover effects
     addEventListeners() {
-        // Only add hover image cycling for desktop
+        // Only add hover effects for desktop
         if (!this.isMobile) {
             const imageContainer = this.element.querySelector('.card-image-container');
             
-            if (Array.isArray(this.project.image) && this.project.image.length > 1) {
+            // VIDEO PREVIEW LOGIC
+            if (this.project.video) {
+                let videoElement = null;
+                let loadTimeout;
+
+                // attach listener to entire card
+                this.element.addEventListener('mouseenter', () => {
+                    // Small delay to prevent accidental loading while scrolling
+                    loadTimeout = setTimeout(() => {
+                        if (!videoElement) {
+                            videoElement = document.createElement('video');
+                            videoElement.src = this.project.video;
+                            videoElement.muted = true;
+                            videoElement.loop = true;
+                            videoElement.playsInline = true;
+                            videoElement.autoplay = true;
+                            videoElement.classList.add('card-video'); // Add CSS class
+                            
+                            // Style to match the image
+                            videoElement.style.position = 'absolute';
+                            videoElement.style.top = '0';
+                            videoElement.style.left = '0';
+                            videoElement.style.width = '100%';
+                            videoElement.style.height = '100%';
+                            videoElement.style.objectFit = 'cover';
+                            videoElement.style.zIndex = '0'; // Behind the overlay but above the image
+                            
+                            // Insert before the overlay
+                            const overlay = this.element.querySelector('.card-overlay');
+                            imageContainer.insertBefore(videoElement, overlay);
+                        } else {
+                            videoElement.play();
+                        }
+                    }, 200); 
+                });
+
+                this.element.addEventListener('mouseleave', () => {
+                    clearTimeout(loadTimeout);
+                    if (videoElement) {
+                        videoElement.pause();
+                        videoElement.remove(); // Remove from DOM to save resources
+                        videoElement = null;
+                    }
+                });
+            }
+            // Image Cycling Logic (Fallback if no video)
+            else if (Array.isArray(this.project.image) && this.project.image.length > 1) {
                 let currentImageIndex = 0;
                 let imageInterval;
                 

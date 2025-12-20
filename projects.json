@@ -6,7 +6,8 @@
         "image": "assets/images/Apollo.png",
         "link": "https://apollo.kiwifunk.com/",
         "github": "https://github.com/KiwiFunk/apollo",
-        "categories": ["Programming"]
+        "categories": ["Programming"],
+        "video": "assets/videos/Apollo.webm"
     },
     {
         "title": "CrossyClone",
@@ -15,7 +16,8 @@
         "image": "assets/images/CrossyClone.png",
         "link": "https://kiwifunk.github.io/crossy-clone/",
         "github": "https://github.com/KiwiFunk/crossy-clone",
-        "categories": ["Programming", "3D", "GameDev"]
+        "categories": ["Programming", "3D", "GameDev"],
+        "video": "assets/videos/CrossyClone.webm"
     },
     {
         "title": "LaraList",
@@ -41,7 +43,8 @@
         "skills": "Blender",
         "image": "assets/images/RG35XX.jpg",
         "link": "https://www.artstation.com/artwork/YBmmNq",
-        "categories": ["3D"]
+        "categories": ["3D"],
+        "video": "assets/videos/RG35XX.webm"
     },
     {
         "title": "LCD-2",
@@ -49,7 +52,8 @@
         "skills": "3DS Max || Substance Painter || Toolbag",
         "image": ["assets/images/LCD2.jpg", "assets/images/LCD2alt.jpg"],
         "link": "https://www.artstation.com/artwork/n0OddK",
-        "categories": ["3D", "GameDev"]
+        "categories": ["3D", "GameDev"],
+        "video": "assets/videos/LCD2.webm"
     },
     {
         "title": "Raptor Rider",

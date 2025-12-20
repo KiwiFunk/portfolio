@@ -48,9 +48,9 @@
     --body-font: "Nunito Sans", Arial, sans-serif;
 
     /* PALETTE: DARK MODE (Default) */
-    --background-color: #0f172a;   /* Slate 900 */
-    --text-color: #f8fafc;         /* Slate 50 */
-    --text-muted: #94a3b8;         /* Slate 400 */
+    --background-color: #0f172a;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
     
     --primary-color: rgb(56, 189, 248);
     --secondary-color: rgb(129, 140, 248);
@@ -78,9 +78,9 @@
 @media (prefers-color-scheme: light) {
     :root {
         /* PALETTE: LIGHT MODE */
-        --background-color: #ffffff;    /* White */
-        --text-color: #0f172a;          /* Slate 900 */
-        --text-muted: #64748b;          /* Slate 500 */
+        --background-color: #ffffff;
+        --text-color: #0f172a;
+        --text-muted: #64748b;
         
         --primary-color: rgb(2, 132, 199);
         --secondary-color: rgb(79, 70, 229);
@@ -90,7 +90,7 @@
         --secondary-rgb: 79, 70, 229;
         --accent-rgb: 177, 94, 255;
         
-        /* UI Elements - Darker glass for light background */
+        /* UI Elements */
         --glass-bg: rgba(0, 0, 0, 0.04);
         --glass-border: rgba(0, 0, 0, 0.08);
         --card-bg: rgba(255, 255, 255, 0.8);
@@ -794,6 +794,16 @@ a {
     flex: 1;
     justify-content: center;
     min-height: 30px; /* Touch-friendly minimum */
+}
+
+/* Project Card Video Styling */
+.card-video {
+animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
 }
 
 /* PAGINATION CLASSES */
