@@ -79,7 +79,8 @@
         "image": "assets/images/SpaceInvaders.png",
         "link": "https://github.com/KiwiFunk/space-invaders",
         "github": "https://github.com/KiwiFunk/space-invaders",
-        "categories": ["Programming", "GameDev"]
+        "categories": ["Programming", "GameDev"],
+        "video": "assets/videos/SpaceInvaders.webm"
     },
     {
         "title": "Snake",
@@ -94,9 +95,10 @@
         "description": "A clone of MonkeyType created as a personal project to practice JavaScript.",
         "skills": "HTML || CSS || JavaScript",
         "image": "assets/images/TypeRacercrop.png",
-        "link": "https://github.com/KiwiFunk/type-racer",
+        "link": "https://kiwifunk.github.io/type-racer/",
         "github": "https://github.com/KiwiFunk/type-racer",
-        "categories": ["Programming"]
+        "categories": ["Programming"],
+        "video": "assets/videos/TypeRacer.webm"
     },
     {
         "title": "Arcade Cab",
@@ -104,7 +106,8 @@
         "skills": "3DS Max || Substance Painter || Marmoset Toolbag",
         "image": "assets/images/arcade-cab.jpg",
         "link": "https://www.artstation.com/artwork/JvWEwm",
-        "categories": ["3D", "GameDev"]
+        "categories": ["3D", "GameDev"],
+        "video": "assets/videos/ArcadeCab.webm"
     },
     {
         "title": "Robot Character",
