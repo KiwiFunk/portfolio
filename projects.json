@@ -115,7 +115,8 @@
         "skills": "Blender || Substance Painter || Unreal Engine",
         "image": "assets/images/Robot.png",
         "link": "https://www.artstation.com/artwork/1NLY5q",
-        "categories": ["3D", "GameDev"]
+        "categories": ["3D", "GameDev"],
+        "video": "assets/videos/Robot.webm"
     },
     {
         "title": "Brick Material",
