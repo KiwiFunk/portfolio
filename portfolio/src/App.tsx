@@ -4,10 +4,9 @@ import { Canvas } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
 import './App.css'
 
-import Scene from './Scene.tsx'
+import Scene from './Scene'
 
 function App() {
-
 
   return (
     <>
