@@ -4,17 +4,14 @@ import { Canvas } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
 import './App.css'
 
+import Scene from './Scene.tsx'
+
 function App() {
 
-  const { scene } = useGLTF('/FolioScene.glb');
 
   return (
     <>
-      <div id="canvas-container">
-        <Canvas >
-          <primitive object={scene} />
-        </Canvas>
-      </div>
+      <Scene />
     </>
   )
 }
