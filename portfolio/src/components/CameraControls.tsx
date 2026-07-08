@@ -1,14 +1,20 @@
 import { useRef, useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+
+import * as THREE from "three";
+
 import type { OrbitControls as OCType } from "three-stdlib";
+
+// Limits (calculate outside of loop to avoid re-calculation on every render)
+const minPolar = THREE.MathUtils.degToRad(65);
+const maxPolar = THREE.MathUtils.degToRad(90);
+const minAzimuth = THREE.MathUtils.degToRad(30);
+const maxAzimuth = THREE.MathUtils.degToRad(60);
 
 export default function CameraControls() {
   const width = useThree((state) => state.size.width);
   const controlsRef = useRef<OCType | null>(null);
-
-  // Helper func to convert degrees to radians
-  const degToRad = (deg: number) => deg * (Math.PI / 180);
 
   useEffect(() => {
     if (!controlsRef.current) return; // If no controller, exit early
@@ -26,11 +32,11 @@ export default function CameraControls() {
       enablePan={false}
 
       // Up/Down rotation limits
-      minPolarAngle={degToRad(65)}
-      maxPolarAngle={degToRad(90)}
+      minPolarAngle={minPolar}
+      maxPolarAngle={maxPolar}
       // Left/Right rotation limits
-      minAzimuthAngle={degToRad(30)}
-      maxAzimuthAngle={degToRad(60)}
+      minAzimuthAngle={minAzimuth}
+      maxAzimuthAngle={maxAzimuth}
     />
   );
 }
