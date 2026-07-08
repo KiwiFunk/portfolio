@@ -9,9 +9,7 @@ export default function Scene() {
       <directionalLight position={[10, 10, 5]} intensity={1.5} />
 
       {/* Use Suspense in future if adding loading state  */}
-      <Center>
-        <Model />
-      </Center>
+      <Model />
     </>
   );
 }
