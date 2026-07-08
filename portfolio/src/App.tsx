@@ -1,18 +1,22 @@
-import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
-import { Canvas } from '@react-three/fiber'
-import { useGLTF } from '@react-three/drei'
-import './App.css'
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import Scene from "./Scene";
 
-import Scene from './Scene'
-
-function App() {
-
+export default function App() {
   return (
-    <>
-      <Scene />
-    </>
-  )
+    <div style={{ width: "100vw", height: "100vh", background: "#1a1a1a" }}>
+      <Canvas
+        orthographic
+        camera={{
+          position: [5, 5, 5],
+          zoom: 150,
+          near: -100,
+          far: 100,
+        }}
+      >
+        <OrbitControls makeDefault />
+        <Scene />
+      </Canvas>
+    </div>
+  );
 }
-
-export default App

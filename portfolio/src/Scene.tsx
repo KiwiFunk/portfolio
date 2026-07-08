@@ -1,42 +1,20 @@
-import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import {
-  Environment,
-  OrbitControls,
-  ContactShadows,
-} from "@react-three/drei";
-
+import { Center } from "@react-three/drei";
 import Model from "./Model";
 
 export default function Scene() {
   return (
-    <Canvas
-      camera={{
-        position: [3, 2, 6],
-        fov: 40,
-      }}
-    >
+    <>
+      {/* Basic lighting just to see the model's textures */}
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} intensity={1.5} />
+
+      {/* Suspense catches the model while it loads so the app doesn't crash */}
       <Suspense fallback={null}>
-        <ambientLight intensity={0.3} />
-
-        <directionalLight
-          position={[5, 5, 5]}
-          intensity={2}
-          castShadow
-        />
-
-        <Environment preset="city" />
-
-        <Model scale={1} />
-
-        <ContactShadows
-          opacity={0.4}
-          blur={2}
-          far={5}
-        />
-
-        <OrbitControls />
+        <Center>
+          <Model />
+        </Center>
       </Suspense>
-    </Canvas>
+    </>
   );
 }
