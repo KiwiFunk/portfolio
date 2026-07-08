@@ -27,7 +27,7 @@ export default function App() {
           maxAzimuthAngle={degToRad(60)}
           // use Zoom for ortho, distance for perspective
           minZoom={45}
-          maxZoom={80}
+          maxZoom={70}
         />
         <Scene />
       </Canvas>
