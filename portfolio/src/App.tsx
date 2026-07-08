@@ -19,6 +19,8 @@ export default function App() {
       >
         <OrbitControls
           makeDefault
+          enablePan={false}
+
           // Up/Down rotation limits
           minPolarAngle={degToRad(65)}
           maxPolarAngle={degToRad(90)}
