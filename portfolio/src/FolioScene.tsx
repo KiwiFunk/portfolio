@@ -85,7 +85,20 @@ export default function FolioScene({
       <mesh geometry={nodes.Flooring.geometry} material={nodes.Flooring.material} scale={0.991} />
       <mesh geometry={nodes.Windows.geometry} material={nodes.Windows.material} position={[0, 5, -0.371]} />
       <mesh geometry={nodes.Chair.geometry} material={nodes.Chair.material} position={[0, 2.656, -1.212]} rotation={[-3.124, 0, Math.PI]} scale={0.9} />
-      <mesh geometry={nodes.ArcadeCab.geometry} material={nodes.ArcadeCab.material} position={[-3.249, 4.11, 1.135]} rotation={[0, 0, -0.442]} scale={0.429} />
+      <mesh
+        name="Projects"
+        geometry={nodes.ArcadeCab.geometry}
+        material={nodes.ArcadeCab.material}
+        position={[-3.249, 4.11, 1.135]}
+        rotation={[0, 0, -0.442]}
+        scale={0.429}
+
+        onClick={onAssetClick}
+        onPointerOver={onAssetOver}
+        onPointerOut={onAssetOut}
+      >
+        {hoveredAsset === "Projects" && <Outlines thickness={2.2} color="white" />}
+      </mesh>
       <mesh geometry={nodes.Guitar.geometry} material={nodes.Guitar.material} position={[-3.962, 1.991, 3.462]} rotation={[2.773, -0.768, -1.833]} scale={0.812} />
       <mesh geometry={nodes.PcTower.geometry} material={nodes.PcTower.material} position={[1.965, 1.393, -1.87]} scale={[0.859, 1.03, 1.03]} />
       <mesh geometry={nodes.Boxes.geometry} material={nodes.Boxes.material} position={[-4.762, 2.605, -2.427]} rotation={[0, 0.117, 0]} scale={[0.586, 0.586, 0.777]} />
@@ -110,7 +123,7 @@ export default function FolioScene({
         onPointerOver={onAssetOver}
         onPointerOut={onAssetOut}
       >
-        {hoveredAsset === "Artstation" && <Outlines thickness={4.2} color="white" />}
+        {hoveredAsset === "Artstation" && <Outlines thickness={2.8} color="white" />}
       </mesh>
 
       <mesh
@@ -124,7 +137,7 @@ export default function FolioScene({
         onPointerOver={onAssetOver}
         onPointerOut={onAssetOut}
       >
-        {hoveredAsset === "GitHub" && <Outlines thickness={4.2} color="white" />}
+        {hoveredAsset === "GitHub" && <Outlines thickness={2.8} color="white" />}
       </mesh>
       <mesh
         name="LinkedIn"
@@ -137,7 +150,7 @@ export default function FolioScene({
         onPointerOver={onAssetOver}
         onPointerOut={onAssetOut}
       >
-        {hoveredAsset === "LinkedIn" && <Outlines thickness={4.2} color="white" />}
+        {hoveredAsset === "LinkedIn" && <Outlines thickness={2.8} color="white" />}
       </mesh>
       <mesh geometry={nodes.Coffee.geometry} material={nodes.Coffee.material} position={[3.67, 3.441, -3.101]} scale={1.045} />
       <mesh geometry={nodes.Coffee_Container.geometry} material={nodes.Coffee_Container.material} position={[3.995, 2.939, -3.804]} scale={[1.025, 1.119, 1.119]} />

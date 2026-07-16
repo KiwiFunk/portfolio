@@ -8,6 +8,7 @@ const ASSET_LINKS: Record<string, string> = {
   Artstation: "https://www.artstation.com/kiwifunk",
   GitHub: "https://github.com/KiwiFunk",
   LinkedIn: "https://www.linkedin.com/in/kiwifunk/",
+  Projects: "https://www.kiwifunk.com/projects",
 };
 
 // Set proper TS type for props to avoid "any" type errors
